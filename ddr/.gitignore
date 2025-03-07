@@ -1,0 +1,13 @@
+
+.godot/
+
+# OS-specific ignores
+.DS_Store
+Thumbs.db
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
