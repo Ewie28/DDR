@@ -39,6 +39,7 @@ func play_anim(movement):
 	var anim = $AnimatedSprite2D
 	
 	if dir == "right":
+		anim.flip_h = false
 		if movement == 1:
 			anim.play("right_walk")
 		elif movement == 0:
@@ -46,7 +47,20 @@ func play_anim(movement):
 			
 	
 	if dir == "left":
+		anim.flip_h = true
 		if movement == 1:
-			anim.play("left_walk")
+			anim.play("right_walk")
 		elif movement == 0:
-			anim.play("left_idle")
+			anim.play("right_idle")
+	
+	if dir == "down":
+		if movement == 1:
+			anim.play("right_walk")
+		elif movement == 0:
+			anim.play("right_idle")
+
+	if dir == "up":
+		if movement == 1:
+			anim.play("right_walk")
+		elif movement == 0:
+			anim.play("right_idle")
