@@ -1,6 +1,6 @@
 
 .godot/
-
+*.import
 # OS-specific ignores
 .DS_Store
 Thumbs.db
