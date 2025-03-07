@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwuig1kiuabsp"
-path="res://.godot/imported/rIdle_1.png-10de062816207a4f310160ebed9bd785.ctex"
+uid="uid://dpevbnli63g2l"
+path="res://.godot/imported/Water.png-8d32f81814a35ad14ec49e2ecd67fd6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/idle_/rIdle_1.png"
-dest_files=["res://.godot/imported/rIdle_1.png-10de062816207a4f310160ebed9bd785.ctex"]
+source_file="res://assets/bg/Water.png"
+dest_files=["res://.godot/imported/Water.png-8d32f81814a35ad14ec49e2ecd67fd6d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drk2dwd2bb3tq"
-path="res://.godot/imported/littleJohn_.png-e2410525a9e2c4d18aeb9d7da5cf6541.ctex"
+uid="uid://b8iimmnfxjq4u"
+path="res://.godot/imported/lIdle_2.png-af584f5bae66e4f0a5c0c42642dcace3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/littleJohn_.png"
-dest_files=["res://.godot/imported/littleJohn_.png-e2410525a9e2c4d18aeb9d7da5cf6541.ctex"]
+source_file="res://assets/player/idle_/lIdle_2.png"
+dest_files=["res://.godot/imported/lIdle_2.png-af584f5bae66e4f0a5c0c42642dcace3.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3c7nhbroiubk"
-path="res://.godot/imported/lIdle_1.png-f9af355a8f0ccf272fa48b77a715e713.ctex"
+uid="uid://dhkmdm0fj2v0o"
+path="res://.godot/imported/Grass.png-c8987ef151857e034b39ea8ab975b438.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/idle_/lIdle_1.png"
-dest_files=["res://.godot/imported/lIdle_1.png-f9af355a8f0ccf272fa48b77a715e713.ctex"]
+source_file="res://assets/bg/Grass.png"
+dest_files=["res://.godot/imported/Grass.png-c8987ef151857e034b39ea8ab975b438.ctex"]
 
 [params]
 

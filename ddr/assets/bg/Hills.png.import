@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5gkmjeu8e5pl"
-path="res://.godot/imported/rIdle_2.png-55e1a11cc849cdf4fd2059032d2f9bc9.ctex"
+uid="uid://c0m8735qoh0b0"
+path="res://.godot/imported/Hills.png-aab33951ea1e702cdd494b1bd5685700.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/idle_/rIdle_2.png"
-dest_files=["res://.godot/imported/rIdle_2.png-55e1a11cc849cdf4fd2059032d2f9bc9.ctex"]
+source_file="res://assets/bg/Hills.png"
+dest_files=["res://.godot/imported/Hills.png-aab33951ea1e702cdd494b1bd5685700.ctex"]
 
 [params]
 
