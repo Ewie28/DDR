@@ -39,7 +39,9 @@ func _process(delta):
 			
 		# If key pressed, pop from queue and calculate distance
 		if Input.is_action_just_pressed(key_name):
-			var key_to_pop = falling_key_queue.pop_front()
+			var key_to_pop = null
+			if falling_key_queue.size() > 0:
+				key_to_pop = falling_key_queue.pop_front()
 			
 			var distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
 			
