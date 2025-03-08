@@ -72,9 +72,9 @@ func play_anim(movement):
 			
 			
 func current_camera():
-	if Main.current_scene =="outside":
+	if Signals.current_scene =="outside":
 		$Outside_camera.enabled = true
 		$Bedroom_camera.enabled = false
-	elif Main.current_scene =="bedroom":
+	elif Signals.current_scene =="bedroom":
 		$Outside_camera.enabled = false
 		$Bedroom_camera.enabled = true

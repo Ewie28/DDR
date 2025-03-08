@@ -18,10 +18,6 @@ config/icon="res://art/icon.svg"
 
 Signals="*res://scenes/RhythmObjects/signals.gd"
 
-[display]
-
-window/stretch/scale=4.0
-
 [input]
 
 button_LEFT={
