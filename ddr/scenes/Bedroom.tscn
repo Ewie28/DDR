@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2pj1g05ekrn4"]
+
+[ext_resource type="Texture2D" uid="uid://ger6tc6vnq5t" path="res://assets/bg/bedroom_full.png" id="1_13mbk"]
+[ext_resource type="PackedScene" uid="uid://dhnjts72cui7w" path="res://scenes/player.tscn" id="2_qxlp7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxlp7"]
+texture = ExtResource("1_13mbk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6qhh"]
+bg_color = Color(0.666667, 0.470588, 0.34902, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Bedroom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qxlp7")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -115.0
+offset_top = -110.0
+offset_right = 115.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6qhh")
+text = "Start game!"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(463, 529, 468, 351, 652, 350, 658, 518, 470, 536, 441, 627, 850, 631, 859, 81, 222, 99, 273, 592, 413, 632)
+
+[node name="player" parent="." instance=ExtResource("2_qxlp7")]
+position = Vector2(578, 523)
+scale = Vector2(4, 4)
