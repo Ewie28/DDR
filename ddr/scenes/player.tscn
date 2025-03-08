@@ -76,6 +76,7 @@ animations = [{
 radius = 4.74342
 
 [node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
 position = Vector2(14, 14)
 script = ExtResource("1_y4r1p")
 

@@ -14,6 +14,10 @@ config/name="DDR"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://art/icon.svg"
 
+[autoload]
+
+Main="*res://scripts/main.gd"
+
 [rendering]
 
 renderer/rendering_method="mobile"
