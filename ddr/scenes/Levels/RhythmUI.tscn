@@ -15,10 +15,10 @@ script = ExtResource("1_qi4n8")
 
 [node name="ScoreLabel" type="RichTextLabel" parent="CanvasLayer"]
 unique_name_in_owner = true
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 208.0
-offset_bottom = 48.0
-theme_override_font_sizes/normal_font_size = 10
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 400.0
+offset_bottom = 96.0
+theme_override_font_sizes/normal_font_size = 50
 text = "0 pts"
 scroll_active = false
