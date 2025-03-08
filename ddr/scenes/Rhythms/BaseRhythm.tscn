@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1nutqraenaed"]
+
+[ext_resource type="PackedScene" uid="uid://cjdk0vl85ftqi" path="res://scenes/RhythmObjects/key_listener.tscn" id="1_8xu51"]
+[ext_resource type="Texture2D" uid="uid://dko3fcnxr2gxp" path="res://assets/rhythm/stage.jpg" id="1_op5qb"]
+[ext_resource type="PackedScene" uid="uid://c321gnuyfb4d0" path="res://scenes/Levels/RhythmUI.tscn" id="2_htu04"]
+[ext_resource type="PackedScene" uid="uid://cptguqjpcgio4" path="res://scenes/RhythmObjects/level_editor.tscn" id="4_brmj2"]
+
+[node name="BaseRhythm" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-80, -7)
+scale = Vector2(0.0702369, 0.0812399)
+texture = ExtResource("1_op5qb")
+
+[node name="KeyListener" parent="." instance=ExtResource("1_8xu51")]
+texture_filter = 1
+position = Vector2(-120, 56)
+key_name = "button_LEFT"
+
+[node name="KeyListener2" parent="." instance=ExtResource("1_8xu51")]
+position = Vector2(-90, 56)
+frame = 1
+key_name = "button_DOWN"
+
+[node name="KeyListener3" parent="." instance=ExtResource("1_8xu51")]
+position = Vector2(-60, 56)
+frame = 2
+key_name = "button_UP"
+
+[node name="KeyListener4" parent="." instance=ExtResource("1_8xu51")]
+position = Vector2(-30, 56)
+frame = 3
+key_name = "button_RIGHT"
+
+[node name="RhythmUi" parent="." instance=ExtResource("2_htu04")]
+
+[node name="LevelEditor" parent="." instance=ExtResource("4_brmj2")]
