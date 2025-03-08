@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1nutqraenaed"]
+
+[ext_resource type="PackedScene" uid="uid://cjdk0vl85ftqi" path="res://scenes/RhythmObjects/KeyListener.tscn" id="1_8xu51"]
+[ext_resource type="PackedScene" uid="uid://cnm6jlcr1fmxo" path="res://scenes/RhythmObjects/FallingKey.tscn" id="2_htu04"]
+[ext_resource type="Script" uid="uid://dn458at321ak1" path="res://scripts/Rhythm/falling_key.gd" id="3_op5qb"]
+
+[node name="BaseRhythm" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="KeyListener" parent="." instance=ExtResource("1_8xu51")]
+texture_filter = 1
+position = Vector2(-120, 56)
+scale = Vector2(0.38, 0.38)
+key_name = "button_LEFT"
+
+[node name="KeyListener2" parent="." instance=ExtResource("1_8xu51")]
+position = Vector2(-90, 56)
+scale = Vector2(0.38, 0.38)
+frame = 1
+key_name = "button_DOWN"
+
+[node name="KeyListener3" parent="." instance=ExtResource("1_8xu51")]
+position = Vector2(-60, 56)
+scale = Vector2(0.38, 0.38)
+frame = 2
+key_name = "button_UP"
+
+[node name="KeyListener4" parent="." instance=ExtResource("1_8xu51")]
+position = Vector2(-30, 56)
+scale = Vector2(0.38, 0.38)
+frame = 3
+key_name = "button_RIGHT"
+
+[node name="FallingKey" parent="." instance=ExtResource("2_htu04")]
+position = Vector2(-120, -104)
+scale = Vector2(0.38, 0.38)
+script = ExtResource("3_op5qb")

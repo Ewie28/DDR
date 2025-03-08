@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1oj1wq38ugef"]
+
+[ext_resource type="Script" uid="uid://bnmpdyamnh58q" path="res://scenes/RhythmObjects/signals.gd" id="1_8fdy2"]
+
+[node name="Signals" type="Node2D"]
+script = ExtResource("1_8fdy2")
