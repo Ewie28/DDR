@@ -18,6 +18,11 @@ config/icon="res://art/icon.svg"
 
 Signals="*res://scenes/RhythmObjects/signals.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="ignore"
+
 [input]
 
 button_LEFT={

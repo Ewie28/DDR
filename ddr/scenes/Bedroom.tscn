@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2pj1g05ekrn4"]
+[gd_scene load_steps=6 format=3 uid="uid://d2pj1g05ekrn4"]
 
-[ext_resource type="Texture2D" uid="uid://ger6tc6vnq5t" path="res://assets/bg/bedroom_full.png" id="1_13mbk"]
+[ext_resource type="Texture2D" uid="uid://bcylnqsa34glk" path="res://assets/bg/bedroom_full.png" id="1_13mbk"]
+[ext_resource type="Script" uid="uid://ctjosvs6hwvdg" path="res://scenes/bedroom.gd" id="1_nttrf"]
 [ext_resource type="PackedScene" uid="uid://dhnjts72cui7w" path="res://scenes/player.tscn" id="2_qxlp7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxlp7"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nttrf")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
@@ -51,8 +53,26 @@ text = "Start game!"
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
 polygon = PackedVector2Array(463, 529, 468, 351, 652, 350, 658, 518, 470, 536, 441, 627, 850, 631, 859, 81, 222, 99, 273, 592, 413, 632)
 
 [node name="player" parent="." instance=ExtResource("2_qxlp7")]
 position = Vector2(578, 523)
 scale = Vector2(4, 4)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -433.0
+offset_top = 14.0
+offset_right = 433.0
+offset_bottom = 151.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "ODD JOB ROB_ OT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="on_start_pressed"]
