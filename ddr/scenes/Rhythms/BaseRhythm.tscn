@@ -10,9 +10,8 @@
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-80, -7)
-scale = Vector2(0.0702369, 0.0812399)
+position = Vector2(-378, -87)
+scale = Vector2(0.787702, 0.79118)
 texture = ExtResource("1_op5qb")
 
 [node name="KeyListener" parent="." instance=ExtResource("1_8xu51")]
