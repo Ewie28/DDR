@@ -9,6 +9,7 @@ func player():
 
 func _physics_process(delta):
 	player_movement(delta)
+	current_camera()
 
 func player_movement(delta):
 	if Input.is_action_pressed("ui_right"):
@@ -68,3 +69,12 @@ func play_anim(movement):
 			anim.play("right_walk")
 		elif movement == 0:
 			anim.play("right_idle")
+			
+			
+func current_camera():
+	if Main.current_scene =="outside":
+		$Outside_camera.enabled = true
+		$Bedroom_camera.enabled = false
+	elif Main.current_scene =="bedroom":
+		$Outside_camera.enabled = false
+		$Bedroom_camera.enabled = true

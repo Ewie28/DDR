@@ -92,7 +92,7 @@ offset = Vector2(0, -11.12)
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_g2els")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Outside_camera" type="Camera2D" parent="."]
 position = Vector2(0, -3)
 zoom = Vector2(4, 4)
 limit_left = 1
@@ -103,3 +103,10 @@ limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Bedroom_camera" type="Camera2D" parent="."]
+position = Vector2(0, -9)
+limit_left = 0
+limit_top = 0
+limit_right = 1150
+limit_bottom = 639
