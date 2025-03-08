@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjdk0vl85ftqi"]
+
+[ext_resource type="Texture2D" uid="uid://o7xpe12fp1rd" path="res://assets/rhythm/arrows.webp" id="1_c3cil"]
+[ext_resource type="Script" uid="uid://srehsycebl8f" path="res://scenes/RhythmObjects/key_listener.gd" id="2_f3civ"]
+
+[node name="KeyListener" type="Sprite2D"]
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("1_c3cil")
+hframes = 4
+vframes = 3
+script = ExtResource("2_f3civ")
+
+[node name="RandomSpawnTime" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="RandomSpawnTime" to="." method="_on_random_spawn_time_timeout"]
