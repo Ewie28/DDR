@@ -3,6 +3,10 @@ extends CharacterBody2D
 const speed = 100
 var current_dir = "none"
 
+#required to check if this is the player
+func player():
+	pass
+
 func _physics_process(delta):
 	player_movement(delta)
 
