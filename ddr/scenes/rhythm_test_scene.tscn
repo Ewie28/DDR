@@ -1,0 +1,72 @@
+[gd_scene load_steps=2 format=3 uid="uid://dladqmfbev68n"]
+
+[ext_resource type="Script" uid="uid://cks8p6lgeauxh" path="res://scenes/rhythm_test_scene.gd" id="1_k1opr"]
+
+[node name="RhythmTestScene" type="Control"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 56.0
+offset_bottom = 48.0
+script = ExtResource("1_k1opr")
+
+[node name="LevelButtons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 184.0
+offset_right = 432.0
+offset_bottom = 296.0
+
+[node name="Rhythm1Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "1"
+
+[node name="Rhythm2Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "2"
+
+[node name="Rhythm3Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "3"
+
+[node name="Rhythm4Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "4"
+
+[node name="Rhythm5Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "5"
+
+[node name="Rhythm6Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "6"
+
+[node name="Rhythm7Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "7"
+
+[node name="Rhythm8Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "8"
+
+[node name="Rhythm9Button" type="Button" parent="LevelButtons"]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "9"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvl6s4wmwd3o6"]
+
+[ext_resource type="Script" uid="uid://djcn7mocjmal0" path="res://scenes/RhythmObjects/rhythm_game_manager.gd" id="1_eh28o"]
+
+[node name="RhythmGameManager" type="Node"]
+script = ExtResource("1_eh28o")

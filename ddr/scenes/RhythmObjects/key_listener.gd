@@ -50,18 +50,14 @@ func _process(delta):
 				if distance_from_pass < perfect_press_threshold:
 					Signals.IncrementScore.emit(perfect_press_score)
 					press_score_text = "PERFECT"
-					#print("PERF")
 				elif distance_from_pass < great_press_threshold:
 					Signals.IncrementScore.emit(great_press_score)
 					press_score_text = "GREAT"
-					#print("GREAT")
 				elif distance_from_pass < good_press_threshold:
 					press_score_text = "GOOD"
-					#print("GOOD")
 					Signals.IncrementScore.emit(good_press_score)
 				elif distance_from_pass < ok_press_threshold:
 					press_score_text = "OK"
-					#print("OK")
 					Signals.IncrementScore.emit(ok_press_score)
 				else:
 					press_score_text = "MISS"

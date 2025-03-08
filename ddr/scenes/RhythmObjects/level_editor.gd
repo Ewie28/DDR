@@ -1,60 +1,83 @@
 extends Node2D
 
-#set before game starts
+# Set to true when in level creation mode
 const in_edit_mode: bool = false
-var current_level_name = "RHYTHM_COW"
 
-# Time it takes for fk to reach crit point
+# Current level being played
+var current_level_name = ""
+
+# Time it takes for falling keys to reach critical point
 var fk_fall_time: float = 2.43323599
+
+# Array for recording key presses in edit mode
 var fk_output_arr = [[],[],[],[]]
 
-var level_info = {
-	"RHYTHM_COW" = {
-		"fk_times": "[[0.11592496733643, 2.93179811339355, 5.65166200499512, 7.50753511290527, 7.95551694731689, 10.2700749764917, 11.1873532662866, 11.6353351006982, 13.4912082086084, 15.8164245019434, 16.3390990624902, 18.5362883935449, 20.3068553338525, 21.4588271508691, 24.4026366601465, 26.7598697076318, 29.2983733544824, 32.4555617700098, 35.6980582604883, 40.2631369958398, 40.7324324975488, 41.6390525231836, 42.1297103295801, 44.4549285302637, 44.9348822961328, 46.2894851098535, 47.6334296594141, 48.1133834252832, 50.8652221093652, 52.6571494470117, 54.5877181420801, 55.5370131860254, 56.0169669518945, 56.4329329858301, 57.4035445580957, 57.8302108178613], [-0.35337196488403, 2.45179809432007, 3.84907688002563, 6.59025586943604, 9.76875985960938, 12.0833169351099, 14.8031817803857, 17.320368898916, 17.5656749139307, 19.3042689691064, 19.8055392632959, 23.9653579125879, 26.3118888268945, 27.7944728265283, 28.338420046377, 31.570254457998, 33.4048606286523, 35.2607337365625, 36.6153365502832, 38.6098929772852, 38.9832259545801, 39.8365126977441, 42.6096679101465, 43.0896674523828, 43.5589629540918, 45.3615485558984, 47.1640883813379, 48.5613662133691, 50.4812766442773, 51.835879457998, 53.659781588125], [-0.79069625039124, 0.56390680174805, 2.01451934676147, 3.40109504561401, 4.28640140395142, 6.12095941405273, 9.3634530435083, 13.0859023461816, 13.917874468374, 15.2831355462549, 16.819054735708, 17.8109809289453, 18.8029548058984, 20.8401881585596, 23.36803354125, 24.8612758050439, 25.9065829644678, 27.2611857781885, 28.8503924737451, 30.6529761682031, 32.1035910974023, 32.9355155358789, 33.8101645837305, 34.7701217065332, 36.1566954980371, 36.9993277917383, 37.9699393640039, 39.367171419668, 41.1804152856348, 41.6497107873438, 42.1297103295801, 43.0683051476953, 43.569621218252, 44.4549285302637, 44.9348822961328, 45.3615485558984, 46.2681685815332, 46.7054473290918, 47.1534301171777, 47.6547461877344, 48.1133834252832, 48.550707949209, 49.0306655297754, 49.5639983544824, 50.0332938561914, 50.4599143395898, 50.8865844140527, 51.8038627038477, 52.2091666589258, 52.6891662011621, 53.659781588125, 54.1077147851465, 54.5877181420801, 56.4649497399805, 57.414248598623, 57.8408690820215, 60.9127036462305], [1.01188863615967, 4.76635564665771, 8.38218320708252, 10.2913895974634, 11.2193719277856, 11.6673079858301, 14.3871718774316, 18.312296999502, 22.0027724633691, 25.3519336114404, 29.6610480676172, 31.1009589562891, 34.2581473718164, 37.5112983117578, 44.0176040063379, 46.7161513696191, 49.0626822839258, 49.5853110681055, 52.2518416772363, 54.1077147851465, 55.5583297143457, 56.0382834802148, 56.4649497399805, 57.4355613122461, 57.8408690820215]]
-		",
-		"music": load("res://assets/audio/cowaudio.wav")
-	}
-}
-
+# Signal connections and initial setup
 func _ready():
-	
-	$SongPlayer.stream = level_info.get(current_level_name).get("music")
-	$SongPlayer.play()
-	
 	if in_edit_mode:
 		Signals.KeyListnerPress.connect(KeyListenerPress)
+	
+	print("LevelEditor ready")
+
+# Load a rhythm level when requested
+func load_rhythm_level(level_data):
+	print("Loading rhythm level: " + level_data.title)
+	current_level_name = level_data.title
+	
+	# Set up the music
+	$SongPlayer.stream = load(level_data.music)
+	
+	# Parse the note data
+	var note_data = str_to_var(level_data.note_data)
+	
+	# Find the RhythmUI
+	var rhythm_ui = get_node_or_null("../../Levels//RhythmUI/rhythm_ui")
+	if rhythm_ui != null and rhythm_ui.has_method("reset_score"):
+		rhythm_ui.reset_score()
 	else:
-		var fk_times = level_info.get(current_level_name).get("fk_times")
-		var fk_times_arr = str_to_var(fk_times)
-		
-		var counter: int = 0
-		for key in fk_times_arr:
-			
-			var button_name: String = ""
-			match counter:
-				0:
-					button_name = "button_LEFT"
-				1:
-					button_name = "button_DOWN"
-				2:
-					button_name = "button_UP"
-				3:
-					button_name = "button_RIGHT"
-			
-			for delay in key:
-				SpawnFallingKey(button_name, delay)
-				
-			counter +=1
+		print("Could not find RhythmUI or it doesn't have reset_score method")
+	
+	# Start the music
+	print("Starting music playback")
+	$SongPlayer.play()
+	
+	# Spawn the falling keys based on timing data
+	var button_names = ["button_LEFT", "button_DOWN", "button_UP", "button_RIGHT"]
+	
+	for i in range(note_data.size()):
+		if i < button_names.size():  # Make sure we don't go out of bounds
+			var button_name = button_names[i]
+			for delay in note_data[i]:
+				spawn_falling_key(button_name, delay)
 
+# Function for recording key presses in edit mode
 func KeyListenerPress(button_name: String, array_num: int):
-	#print(str(array_num) + " " + str($SongPlayer.get_playback_position()))
-	fk_output_arr[array_num].append($SongPlayer.get_playback_position() - fk_fall_time)
+	if in_edit_mode:
+		fk_output_arr[array_num].append($SongPlayer.get_playback_position() - fk_fall_time)
 
-
-func SpawnFallingKey(button_name: String, delay: float):
+# Spawn a falling key after the specified delay
+func spawn_falling_key(button_name: String, delay: float):
+	#print("Scheduling key spawn: " + button_name + " after " + str(delay) + " seconds")
 	await get_tree().create_timer(delay).timeout
+	#print("Spawning falling key: " + button_name)
 	Signals.CreateFallingKey.emit(button_name)
 
-
+# When the song finishes, end the rhythm game
 func _on_song_player_finished() -> void:
-	print(fk_output_arr)
+	print("Song finished")
+	if in_edit_mode:
+		print(fk_output_arr)
+	else:
+		# Determine if the player passed the level
+		var rhythm_ui = get_node_or_null("../../Levels//RhythmUI/rhythm_ui")
+		var success = false
+		if rhythm_ui != null:
+			success = rhythm_ui.score >= 500  # Lower threshold for testing
+			print("Final score: " + str(rhythm_ui.score))
+		
+		# Wait a moment before ending
+		await get_tree().create_timer(1).timeout
+		
+		# End the rhythm game
+		print("Emitting EndRhythmGame signal")
+		Signals.EndRhythmGame.emit(success)
