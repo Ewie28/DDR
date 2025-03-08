@@ -1,11 +1,11 @@
 extends Sprite2D
 
-@export var fall_speed: float = 2.0 # WILL ADJUST THIS DEPENDING ON SONG
+@export var fall_speed: float = 8.0
 
-var init_y_pos: float = -104
+var init_y_pos: float = -700
 
 var has_passed: bool = false
-var pass_threshold = 76
+var pass_threshold = 470
 
 func _init():
 	set_process(false)

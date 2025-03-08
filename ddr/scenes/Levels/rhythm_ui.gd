@@ -7,5 +7,10 @@ func _ready():
 	Signals.IncrementScore.connect(IncrementScore)
 
 func IncrementScore(incr: int):
-	score +=incr
+	score += incr
 	%ScoreLabel.text = str(score) + "pts"
+	
+# Reset the score for a new game
+func reset_score():
+	score = 0
+	%ScoreLabel.text = "0pts"

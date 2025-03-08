@@ -1,39 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1nutqraenaed"]
+[gd_scene load_steps=6 format=3 uid="uid://b1nutqraenaed"]
 
 [ext_resource type="PackedScene" uid="uid://cjdk0vl85ftqi" path="res://scenes/RhythmObjects/key_listener.tscn" id="1_8xu51"]
-[ext_resource type="Texture2D" uid="uid://cmaqk7ewh5sjn" path="res://assets/rhythm/stage.jpg" id="1_op5qb"]
+[ext_resource type="PackedScene" uid="uid://bvl6s4wmwd3o6" path="res://scenes/RhythmObjects/rhythm_game_manager.tscn" id="1_ekfno"]
+[ext_resource type="Texture2D" uid="uid://dko3fcnxr2gxp" path="res://assets/rhythm/stage.jpg" id="1_op5qb"]
 [ext_resource type="PackedScene" uid="uid://c321gnuyfb4d0" path="res://scenes/Levels/RhythmUI.tscn" id="2_htu04"]
 [ext_resource type="PackedScene" uid="uid://cptguqjpcgio4" path="res://scenes/RhythmObjects/level_editor.tscn" id="4_brmj2"]
 
 [node name="BaseRhythm" type="Node2D"]
 
+[node name="RhythmGameManager" parent="." instance=ExtResource("1_ekfno")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(-80, -7)
-scale = Vector2(0.0702369, 0.0812399)
+position = Vector2(-378, -87)
+scale = Vector2(0.787702, 0.79118)
 texture = ExtResource("1_op5qb")
 
 [node name="KeyListener" parent="." instance=ExtResource("1_8xu51")]
 texture_filter = 1
-position = Vector2(-120, 56)
+position = Vector2(-700, 456)
+scale = Vector2(3, 3)
 key_name = "button_LEFT"
 
 [node name="KeyListener2" parent="." instance=ExtResource("1_8xu51")]
-position = Vector2(-90, 56)
+position = Vector2(-450, 456)
+scale = Vector2(3, 3)
 frame = 1
 key_name = "button_DOWN"
 
 [node name="KeyListener3" parent="." instance=ExtResource("1_8xu51")]
-position = Vector2(-60, 56)
+position = Vector2(-200, 456)
+scale = Vector2(3, 3)
 frame = 2
 key_name = "button_UP"
 
 [node name="KeyListener4" parent="." instance=ExtResource("1_8xu51")]
-position = Vector2(-30, 56)
+position = Vector2(50, 456)
+scale = Vector2(3, 3)
 frame = 3
 key_name = "button_RIGHT"
 
 [node name="RhythmUi" parent="." instance=ExtResource("2_htu04")]
+metadata/_edit_use_anchors_ = true
 
 [node name="LevelEditor" parent="." instance=ExtResource("4_brmj2")]
