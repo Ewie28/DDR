@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://bih1j1nblqbf4" path="res://scripts/player.gd" id="1_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://b1fcdpkqgxwxw" path="res://assets/player/robot_sprite.png" id="2_qhqgy"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 4.74342
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_qhqgy")
 region = Rect2(0, 0, 28, 28)
@@ -75,16 +72,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 4.74342
+
 [node name="player" type="CharacterBody2D"]
 position = Vector2(14, 14)
 script = ExtResource("1_y4r1p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 11)
-shape = SubResource("CircleShape2D_g2els")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_gl8cc")
 animation = &"right_idle"
-frame_progress = 0.0972977
+frame_progress = 0.574414
+offset = Vector2(0, -11.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -3)
+zoom = Vector2(4, 4)
+limit_left = 1
+limit_top = 0
+limit_right = 559
+limit_bottom = 351
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
