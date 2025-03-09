@@ -492,7 +492,7 @@ sources/2 = SubResource("TileSetAtlasSource_pu366")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udpx5"]
 size = Vector2(32, 20)
 
-[node name="Outside" type="Node2D"]
+[node name="Outside" type="Node2D" groups=["outside"]]
 y_sort_enabled = true
 script = ExtResource("1_7r1kg")
 
@@ -549,39 +549,39 @@ polygon = PackedVector2Array(-1, 78, 29, 79, 31, 64, 60, 59, 61, 42, 91, 43, 95,
 position = Vector2(288, 93)
 shape = SubResource("RectangleShape2D_udpx5")
 
-[node name="level_1_cat" parent="." instance=ExtResource("11_v7x2m")]
+[node name="level_1_cat" parent="." groups=["interactables"] instance=ExtResource("11_v7x2m")]
 position = Vector2(112, 151)
 scale = Vector2(2, 2)
 
-[node name="level_1_lawn" parent="." instance=ExtResource("12_x3una")]
+[node name="level_1_lawn" parent="." groups=["interactables"] instance=ExtResource("12_x3una")]
 position = Vector2(463, 70)
 scale = Vector2(1.5, 1.5)
 
-[node name="level_1_maccas" parent="." instance=ExtResource("13_nxbbw")]
+[node name="level_1_maccas" parent="." groups=["interactables"] instance=ExtResource("13_nxbbw")]
 position = Vector2(463, 227)
 scale = Vector2(2, 2)
 
-[node name="level_2_dance" parent="." instance=ExtResource("14_xq4d2")]
+[node name="level_2_dance" parent="." groups=["interactables"] instance=ExtResource("14_xq4d2")]
 position = Vector2(289, 269)
 scale = Vector2(2, 2)
 
-[node name="level_2_janitor" parent="." instance=ExtResource("15_ni2yb")]
+[node name="level_2_janitor" parent="." groups=["interactables"] instance=ExtResource("15_ni2yb")]
 position = Vector2(505, 171)
 scale = Vector2(1.5, 1.5)
 
-[node name="level_2_robber" parent="." instance=ExtResource("16_pu366")]
+[node name="level_2_robber" parent="." groups=["interactables"] instance=ExtResource("16_pu366")]
 position = Vector2(220, 134)
 scale = Vector2(1.5, 1.5)
 
-[node name="level_3_car" parent="." instance=ExtResource("17_xi7x6")]
+[node name="level_3_car" parent="." groups=["interactables"] instance=ExtResource("17_xi7x6")]
 position = Vector2(87, 267)
 scale = Vector2(2, 2)
 
-[node name="level_3_dog" parent="." instance=ExtResource("18_s22lx")]
+[node name="level_3_dog" parent="." groups=["interactables"] instance=ExtResource("18_s22lx")]
 position = Vector2(385, 137)
 scale = Vector2(1.5, 1.5)
 
-[node name="level_3_parcel" parent="." instance=ExtResource("19_2xi43")]
+[node name="level_3_parcel" parent="." groups=["interactables"] instance=ExtResource("19_2xi43")]
 position = Vector2(82, 53)
 scale = Vector2(1.5, 1.5)
 

@@ -24,7 +24,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_okqnp")
 animation = &"janitor"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["interactables"]]
 script = ExtResource("2_owx4q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

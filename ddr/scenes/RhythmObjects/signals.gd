@@ -1,5 +1,13 @@
 extends Node2D
 var rhythm_level_id = "default"
+
+#for missions 
+var current_day = 1
+var missions_attempted = 0
+const MAX_MISSIONS = 3
+
+signal DayAdvanced
+
 signal IncrementScore(incr: int)
 
 signal CreateFallingKey(button_name: String)
@@ -44,3 +52,16 @@ func finish_change_scene():
 			current_scene == "outside"
 			#when adding more scenes, add them here eg ddr
 			
+func attempt_mission():
+	if missions_attempted < MAX_MISSIONS:
+		missions_attempted += 1
+		print("Mission", missions_attempted, "completed for Day", current_day)
+
+	if missions_attempted == MAX_MISSIONS:
+		next_day()
+		
+func next_day():
+	current_day += 1
+	missions_attempted = 0
+	print("Advancing to Day", current_day)
+	DayAdvanced.emit()  # Notify scenes to update interactables
