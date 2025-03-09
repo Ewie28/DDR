@@ -18,5 +18,6 @@ func change_scene():
 			#transition happens here, add the cutscene here for when transitioning from outside to bedroom if any
 			Signals.finish_change_scene() #used so bedroom can communicate with outside scene?
 			get_tree().change_scene_to_file("res://scenes/Bedroom.tscn") #this is how to change to this file
+
 				
 		
