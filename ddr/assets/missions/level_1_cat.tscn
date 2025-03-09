@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://be7wfwh4aloc0"]
 
 [ext_resource type="Texture2D" uid="uid://bxmahbv7d6fpi" path="res://mission_sprites/level1_cat.png" id="1_8lyp3"]
-[ext_resource type="Script" uid="uid://cwym2lwlij1dv" path="res://assets/missions/area_2d.gd" id="2_okqnp"]
+[ext_resource type="Script" uid="uid://cwym2lwlij1dv" path="res://assets/missions/area_2d_cat.gd" id="2_okqnp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
 animations = [{

@@ -1,10 +1,11 @@
 extends Area2D
 	
-var level_id = "rhythm1"
+var level_id = "rhythm4"
 
 # Reference to the BaseRhythm scene (preload it)
 @onready var base_rhythm_scene = preload("res://scenes/Rhythms/BaseRhythm.tscn")
 var base_rhythm_instance = null
+
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Starting rhythm level: " + level_id)

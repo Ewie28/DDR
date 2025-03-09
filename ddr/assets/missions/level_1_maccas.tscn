@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://483psna6x4ty"]
 
 [ext_resource type="Texture2D" uid="uid://buqijicvyju8e" path="res://mission_sprites/level1_maccas.png" id="1_q2uok"]
-[ext_resource type="Script" uid="uid://cwym2lwlij1dv" path="res://assets/missions/area_2d.gd" id="2_pyfpp"]
+[ext_resource type="Script" uid="uid://b8o138pcg4jbt" path="res://assets/missions/area_2d_maccas.gd" id="2_q2uok"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
 animations = [{
@@ -14,7 +14,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_okqnp"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pyfpp"]
 radius = 7.07107
 
 [node name="level_1_maccas" type="CharacterBody2D"]
@@ -25,10 +25,10 @@ sprite_frames = SubResource("SpriteFrames_okqnp")
 animation = &"maccas"
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_pyfpp")
+script = ExtResource("2_q2uok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 7)
-shape = SubResource("CircleShape2D_okqnp")
+position = Vector2(1, 4)
+shape = SubResource("CircleShape2D_pyfpp")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
