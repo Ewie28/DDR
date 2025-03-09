@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c321gnuyfb4d0"]
 
 [ext_resource type="Script" uid="uid://3fi5rjttih7i" path="res://scenes/Levels/rhythm_ui.gd" id="1_qi4n8"]
-[ext_resource type="FontFile" uid="uid://cu47almslblgq" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="2_tf2vn"]
+[ext_resource type="FontFile" uid="uid://ixnekxu1e453" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="2_tf2vn"]
 
 [node name="RhythmUi" type="Control"]
 layout_mode = 3
@@ -20,6 +20,8 @@ offset_left = 32.0
 offset_top = 24.0
 offset_right = 400.0
 offset_bottom = 96.0
+theme_override_colors/font_outline_color = Color(0, 2.16588e-07, 0.321899, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_tf2vn")
 theme_override_font_sizes/normal_font_size = 70
 text = "0 pts"

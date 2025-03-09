@@ -76,7 +76,7 @@ func update_background_image():
 	
 	# Update the background image
 	if bg_path and bg_path != "":
-		print("Displaying background image: " + bg_path)
+		#print("Displaying background image: " + bg_path)
 		background_image.texture = load(bg_path)
 		background_image.visible = true
 	else:

@@ -60,10 +60,28 @@ func _on_song_player_finished() -> void:
 	print("Song finished")
 	if in_edit_mode:
 		print(fk_output_arr)
-	else:		
+	#else:		
+		## Wait a moment before ending
+		#await get_tree().create_timer(1).timeout
+		#
+		## End the rhythm game
+		#print("Emitting EndRhythmGame signal")
+		#Signals.EndRhythmGame.emit(true)
+	else:
+		# Get the final score and compare with pass threshold
+		var rhythm_ui = get_node_or_null("../RhythmUi")
+		print(get_parent().get_children())
+		var success = false
+		if rhythm_ui != null:
+			success = rhythm_ui.score >= rhythm_ui.pass_threshold
+		
+		# Emit the result signal first
+		print("Emitting RhythmGameResult signal")
+		Signals.RhythmGameResult.emit(rhythm_ui.score if rhythm_ui != null else 0, success)
+		
 		# Wait a moment before ending
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(5).timeout
 		
 		# End the rhythm game
 		print("Emitting EndRhythmGame signal")
-		Signals.EndRhythmGame.emit(true)
+		Signals.EndRhythmGame.emit(success)

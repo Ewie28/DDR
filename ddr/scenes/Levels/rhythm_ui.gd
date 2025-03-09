@@ -1,7 +1,7 @@
 extends Control
 
 var score: int = 0
-var pass_threshold: int = 25000 
+var pass_threshold: int = 10000 
 
 # Called when node enters scene tree for first time
 func _ready():
@@ -23,4 +23,4 @@ func _on_rhythm_game_ended(success):
 	print("Result: " + ("PASS" if score >= pass_threshold else "FAIL"))
 	
 	# Emit our own signal with the detailed results
-	Signals.RhythmGameResult.emit(score, score >= pass_threshold)
+	#Signals.RhythmGameResult.emit(score, score >= pass_threshold)

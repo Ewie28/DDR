@@ -49,7 +49,7 @@ func _on_rhythm_game_ended(_success):
 	if _success:
 		print("game end")
 	else:
-		print("game crashed")
+		print("game not success end?")
 	
 	# Show the test UI again
 	visible = true
