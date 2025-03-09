@@ -15,8 +15,8 @@ script = ExtResource("1_rg0q4")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="BackgroundLeft" type="Sprite2D" parent="."]
-position = Vector2(-292, -23)
-scale = Vector2(0.237097, 0.302)
+position = Vector2(-239.5, -23)
+scale = Vector2(0.279436, 0.302)
 texture = ExtResource("1_op5qb")
 
 [node name="KeyListener" parent="." instance=ExtResource("1_8xu51")]
@@ -49,8 +49,9 @@ metadata/_edit_use_anchors_ = true
 [node name="LevelEditor" parent="." instance=ExtResource("4_brmj2")]
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
-offset_top = -320.0
-offset_right = 576.0
-offset_bottom = 320.0
+offset_left = 96.0
+offset_top = -328.0
+offset_right = 584.0
+offset_bottom = 336.0
 expand_mode = 4
 stretch_mode = 5
