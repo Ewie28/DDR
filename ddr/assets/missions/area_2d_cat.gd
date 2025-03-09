@@ -57,9 +57,10 @@ func _on_rhythm_game_ended(_success):
 		print("game crashed")
 	
 	# Show the world UI again if needed
-	# get_tree().current_scene.visible = true
+	get_tree().current_scene.visible = true
 	
 	# Remove the rhythm game instance
 	if base_rhythm_instance != null:
 		base_rhythm_instance.queue_free()
 		base_rhythm_instance = null
+		

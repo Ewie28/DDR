@@ -48,8 +48,10 @@ func finish_change_scene():
 				current_scene = "bedroom"
 			elif desired_scene == "rhythm":
 				current_scene = "rhythm"
-		elif current_scene == "bedroom":
-			current_scene == "outside"
+		elif desired_scene == "outside":
+			current_scene = "outside"
+		elif desired_scene == "rhythm":
+				current_scene = "rhythm"
 			#when adding more scenes, add them here eg ddr
 			
 func attempt_mission():
