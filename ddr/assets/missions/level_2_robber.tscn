@@ -1,30 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://tm68l2g4iyst"]
+[gd_scene load_steps=4 format=3 uid="uid://tm68l2g4iyst"]
 
 [ext_resource type="Texture2D" uid="uid://d2b2io1jiylpe" path="res://mission_sprites/level2_robber.png" id="1_y2fho"]
 [ext_resource type="Script" uid="uid://d2cfpu6osg7wk" path="res://assets/missions/area_2d_robber.gd" id="2_y2fho"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_y2fho")
-}],
-"loop": true,
-"name": &"robber",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_etqlc"]
 radius = 8.0
 
 [node name="level_2_robber" type="CharacterBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_okqnp")
-animation = &"robber"
+texture = ExtResource("1_y2fho")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["interactables"]]
 script = ExtResource("2_y2fho")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

@@ -6,7 +6,26 @@ var level_id = "rhythm7"
 @onready var base_rhythm_scene = preload("res://scenes/Rhythms/BaseRhythm.tscn")
 var base_rhythm_instance = null
 
+@export var day_active = 3
 
+func update_active_state():
+	# Check the current day and enable/disable interactability accordingly
+	if Signals.current_day == day_active:
+		print("Setting active: true")
+		set_active(true)  # Clickable
+	else:
+		print("Setting active: false")
+		set_active(false)  # Greyed out
+
+func set_active(is_active: bool):
+	set_deferred("monitoring", is_active)  # Enable/disable collision detection
+	set_deferred("input_pickable", is_active)  # Enable/disable interactions
+	 # Find the AnimatedSprite2D and modify its appearance
+	var sprite = get_parent().get_node("Sprite2D")  # Move up to level_1_cat, then find Sprite2D
+	if sprite:
+		var texture_path = "C:/Users/jadam/DDR/ddr/mission_sprites/level3_car.png" if is_active else "C:/Users/jadam/DDR/ddr/mission_sprites/level3_car_grey.png"
+		sprite.texture = load(texture_path)
+		
 func _on_body_entered(body: Node2D) -> void:
 	print("Starting rhythm level: " + level_id)
 	Signals.desired_scene = "rhythm"

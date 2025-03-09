@@ -1,30 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bv67t3yqm33lm"]
+[gd_scene load_steps=4 format=3 uid="uid://bv67t3yqm33lm"]
 
 [ext_resource type="Texture2D" uid="uid://clkoq1gfeuxwp" path="res://mission_sprites/level3_dog.png" id="1_kovf7"]
 [ext_resource type="Script" uid="uid://dd4hgwir3pcfv" path="res://assets/missions/area_2d_dog.gd" id="2_kovf7"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_kovf7")
-}],
-"loop": true,
-"name": &"dog",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_one0v"]
 radius = 6.0
 
 [node name="level_3_dog" type="CharacterBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_okqnp")
-animation = &"dog"
+texture = ExtResource("1_kovf7")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["interactables"]]
 script = ExtResource("2_kovf7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
