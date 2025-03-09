@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dn458at321ak1" path="res://scenes/RhythmObjects/falling_key.gd" id="2_wrv15"]
 
 [node name="FallingKey" type="Sprite2D"]
-scale = Vector2(3, 3)
+scale = Vector2(1.3, 1.3)
 texture = ExtResource("1_v4xk1")
 hframes = 4
 vframes = 3
