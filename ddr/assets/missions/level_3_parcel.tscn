@@ -1,28 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cox8gqpt04wk7"]
+[gd_scene load_steps=4 format=3 uid="uid://cox8gqpt04wk7"]
 
 [ext_resource type="Texture2D" uid="uid://dhy6qjt04od3h" path="res://mission_sprites/level3_parcel.png" id="1_f6u66"]
 [ext_resource type="Script" uid="uid://dab8q4c47theo" path="res://assets/missions/area_2d_parcel.gd" id="2_f6u66"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_f6u66")
-}],
-"loop": true,
-"name": &"parcell",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xhfqe"]
 radius = 7.0
 
 [node name="level_3_parcel" type="CharacterBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_okqnp")
-animation = &"parcell"
+texture = ExtResource("1_f6u66")
 
 [node name="Area2D" type="Area2D" parent="." groups=["interactables"]]
 script = ExtResource("2_f6u66")

@@ -1,28 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://05augbsl71c"]
+[gd_scene load_steps=4 format=3 uid="uid://05augbsl71c"]
 
 [ext_resource type="Texture2D" uid="uid://nfqot1wdyilb" path="res://mission_sprites/level2_dance.png" id="1_8swlx"]
 [ext_resource type="Script" uid="uid://dibqp3sv7ajga" path="res://assets/missions/area_2d_dance.gd" id="2_8swlx"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_8swlx")
-}],
-"loop": true,
-"name": &"dance",
-"speed": 5.0
-}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xf6b1"]
 radius = 6.08276
 
 [node name="level_2_dance" type="CharacterBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_okqnp")
-animation = &"dance"
+texture = ExtResource("1_8swlx")
 
 [node name="Area2D" type="Area2D" parent="." groups=["interactables"]]
 script = ExtResource("2_8swlx")
