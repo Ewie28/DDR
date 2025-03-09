@@ -1,34 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://be7wfwh4aloc0"]
+[gd_scene load_steps=5 format=3 uid="uid://cox8gqpt04wk7"]
 
-[ext_resource type="Texture2D" uid="uid://bxmahbv7d6fpi" path="res://mission_sprites/level1_cat.png" id="1_8lyp3"]
-[ext_resource type="Script" uid="uid://cwym2lwlij1dv" path="res://assets/missions/area_2d.gd" id="2_okqnp"]
+[ext_resource type="Texture2D" uid="uid://dhy6qjt04od3h" path="res://mission_sprites/level3_parcel.png" id="1_f6u66"]
+[ext_resource type="Script" uid="uid://cwym2lwlij1dv" path="res://assets/missions/area_2d.gd" id="2_xhfqe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8lyp3")
+"texture": ExtResource("1_f6u66")
 }],
 "loop": true,
-"name": &"cat",
+"name": &"parcell",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_okqnp"]
 radius = 7.07107
 
-[node name="level_1_cat" type="CharacterBody2D"]
+[node name="level_3_parcel" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_okqnp")
-animation = &"cat"
+animation = &"parcell"
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_okqnp")
+script = ExtResource("2_xhfqe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 7)
+position = Vector2(1, 7)
 shape = SubResource("CircleShape2D_okqnp")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

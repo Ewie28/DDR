@@ -1,31 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://be7wfwh4aloc0"]
+[gd_scene load_steps=5 format=3 uid="uid://cs6yi5nyxmauk"]
 
-[ext_resource type="Texture2D" uid="uid://bxmahbv7d6fpi" path="res://mission_sprites/level1_cat.png" id="1_8lyp3"]
-[ext_resource type="Script" uid="uid://cwym2lwlij1dv" path="res://assets/missions/area_2d.gd" id="2_okqnp"]
+[ext_resource type="Texture2D" uid="uid://ck81qyheh5v3k" path="res://mission_sprites/level2_janitor.png" id="1_owx4q"]
+[ext_resource type="Script" uid="uid://cwym2lwlij1dv" path="res://assets/missions/area_2d.gd" id="2_bdbr5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_okqnp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_8lyp3")
+"texture": ExtResource("1_owx4q")
 }],
 "loop": true,
-"name": &"cat",
+"name": &"janitor",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_okqnp"]
 radius = 7.07107
 
-[node name="level_1_cat" type="CharacterBody2D"]
+[node name="level_2_janitor" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_okqnp")
-animation = &"cat"
+animation = &"janitor"
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_okqnp")
+script = ExtResource("2_bdbr5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 7)

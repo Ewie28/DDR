@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cjdk0vl85ftqi" path="res://scenes/RhythmObjects/key_listener.tscn" id="1_8xu51"]
 [ext_resource type="PackedScene" uid="uid://bvl6s4wmwd3o6" path="res://scenes/RhythmObjects/rhythm_game_manager.tscn" id="1_ekfno"]
-[ext_resource type="Texture2D" uid="uid://dko3fcnxr2gxp" path="res://assets/rhythm/stage.jpg" id="1_op5qb"]
+[ext_resource type="Texture2D" uid="uid://cmaqk7ewh5sjn" path="res://assets/rhythm/stage.jpg" id="1_op5qb"]
 [ext_resource type="PackedScene" uid="uid://c321gnuyfb4d0" path="res://scenes/Levels/RhythmUI.tscn" id="2_htu04"]
 [ext_resource type="PackedScene" uid="uid://cptguqjpcgio4" path="res://scenes/RhythmObjects/level_editor.tscn" id="4_brmj2"]
 
