@@ -6,7 +6,7 @@ var levels = {
 		"title": "Catch the Cat",
 		"music": "res://assets/audio/song_1.wav", 
 		"background_image": "",  # Leave empty for now
-		"note_data": "[[0.8, 1.5, 2.3],[1.0, 1.7, 2.5],[1.2, 1.9, 2.7],[1.4, 2.1, 2.9]]"
+		"note_data": "[[0.8, 1.5, 2.3, 3, 4, 5, 6, 8, 10, 11, 12, 13, 14, 15 ,16],[1.0, 1.7, 2.5],[1.2, 1.9, 2.7],[1.4, 2.1, 2.9]]"
 	},
 	"rhythm2": {
 		"title": "Clean the Cars",

@@ -26,7 +26,7 @@ func _ready():
 	print("Signals script initialized")
 	# Connect to our own signals for debugging
 	StartRhythmGame.connect(func(level_id): print("StartRhythmGame signal emitted for: " + level_id))
-	CreateFallingKey.connect(func(button): print("CreateFallingKey signal emitted for: " + button))
+	CreateFallingKey.connect(func(button): pass)
 	EndRhythmGame.connect(func(success): print("EndRhythmGame signal emitted with success: " + str(success)))
 
 func finish_change_scene():

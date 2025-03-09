@@ -7,8 +7,8 @@ var falling_key_queue = []
 
 var perfect_press_threshold: float = 20
 var great_press_threshold: float = 40
-var good_press_threshold: float = 65
-var ok_press_threshold: float = 110
+var good_press_threshold: float = 75
+var ok_press_threshold: float = 140
 # otherwise, miss
 
 var perfect_press_score: float = 250

@@ -1,11 +1,11 @@
 extends Sprite2D
 
-@export var fall_speed: float = 8.0
+@export var fall_speed: float = 4.5
 
-var init_y_pos: float = -700
+var init_y_pos: float = -400
 
 var has_passed: bool = false
-var pass_threshold = 470
+var pass_threshold = 260
 
 func _init():
 	set_process(false)

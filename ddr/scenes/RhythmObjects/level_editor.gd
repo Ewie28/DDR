@@ -7,7 +7,7 @@ const in_edit_mode: bool = false
 var current_level_name = ""
 
 # Time it takes for falling keys to reach critical point
-var fk_fall_time: float = 2.43323599
+var fk_fall_time: float = 2.43333333
 
 # Array for recording key presses in edit mode
 var fk_output_arr = [[],[],[],[]]
