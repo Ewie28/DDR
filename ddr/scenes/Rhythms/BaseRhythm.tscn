@@ -1,18 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1nutqraenaed"]
+[gd_scene load_steps=7 format=3 uid="uid://b1nutqraenaed"]
 
 [ext_resource type="PackedScene" uid="uid://cjdk0vl85ftqi" path="res://scenes/RhythmObjects/key_listener.tscn" id="1_8xu51"]
 [ext_resource type="PackedScene" uid="uid://bvl6s4wmwd3o6" path="res://scenes/RhythmObjects/rhythm_game_manager.tscn" id="1_ekfno"]
 [ext_resource type="Texture2D" uid="uid://dko3fcnxr2gxp" path="res://assets/rhythm/stage.jpg" id="1_op5qb"]
+[ext_resource type="Script" uid="uid://nyjod1eha4x0" path="res://scenes/Rhythms/base_rhythm.gd" id="1_rg0q4"]
 [ext_resource type="PackedScene" uid="uid://c321gnuyfb4d0" path="res://scenes/Levels/RhythmUI.tscn" id="2_htu04"]
 [ext_resource type="PackedScene" uid="uid://cptguqjpcgio4" path="res://scenes/RhythmObjects/level_editor.tscn" id="4_brmj2"]
 
 [node name="BaseRhythm" type="Node2D"]
+script = ExtResource("1_rg0q4")
 
 [node name="RhythmGameManager" parent="." instance=ExtResource("1_ekfno")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="BackgroundLeft" type="Sprite2D" parent="."]
 position = Vector2(-292, -23)
 scale = Vector2(0.237097, 0.302)
 texture = ExtResource("1_op5qb")
@@ -45,3 +47,10 @@ key_name = "button_RIGHT"
 metadata/_edit_use_anchors_ = true
 
 [node name="LevelEditor" parent="." instance=ExtResource("4_brmj2")]
+
+[node name="BackgroundImage" type="TextureRect" parent="."]
+offset_top = -320.0
+offset_right = 576.0
+offset_bottom = 320.0
+expand_mode = 4
+stretch_mode = 5
