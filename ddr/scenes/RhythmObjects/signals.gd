@@ -1,5 +1,5 @@
 extends Node2D
-
+var rhythm_level_id = "default"
 signal IncrementScore(incr: int)
 
 signal CreateFallingKey(button_name: String)
