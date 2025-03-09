@@ -2,7 +2,7 @@ extends Node2D
 var rhythm_level_id = "default"
 
 #for missions 
-var current_day = 3
+var current_day = 1
 var missions_attempted = 0
 const MAX_MISSIONS = 3
 

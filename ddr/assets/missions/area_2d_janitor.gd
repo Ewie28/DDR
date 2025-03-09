@@ -23,7 +23,7 @@ func set_active(is_active: bool):
 	 # Find the AnimatedSprite2D and modify its appearance
 	var sprite = get_parent().get_node("Sprite2D")  # Move up to level_1_cat, then find Sprite2D
 	if sprite:
-		var texture_path = "C:/Users/jadam/DDR/ddr/mission_sprites/level2_janitor.png" if is_active else "C:/Users/jadam/DDR/ddr/mission_sprites/level2_janitor_grey.png"
+		var texture_path = "res://mission_sprites/level2_janitor.png" if is_active else "res://mission_sprites/level2_janitor_grey.png"
 		sprite.texture = load(texture_path)
 		
 func _on_body_entered(body: Node2D) -> void:
