@@ -9,6 +9,7 @@ var base_rhythm_instance = null
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Starting rhythm level: " + level_id)
+	Signals.desired_scene = "rhythm"
 	
 	# Hide any UI that needs to be hidden
 	# get_tree().current_scene.visible = false

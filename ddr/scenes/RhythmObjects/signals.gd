@@ -14,6 +14,7 @@ signal RhythmGameResult(score: int, success: bool)
 
 # Scene management
 var current_scene = "bedroom" #eg. outside, ddr, levels 
+var desired_scene = "bedroom"
 var transition_scene = false
 
 #exit position
@@ -35,7 +36,11 @@ func finish_change_scene():
 	if transition_scene == true:
 		transition_scene = false
 		if current_scene == "outside":
-			current_scene = "bedroom"
-		else:
-			current_scene = "outside"
+			if desired_scene == "bedroom":
+				current_scene = "bedroom"
+			elif desired_scene == "rhythm":
+				current_scene = "rhythm"
+		elif current_scene == "bedroom":
+			current_scene == "outside"
 			#when adding more scenes, add them here eg ddr
+			

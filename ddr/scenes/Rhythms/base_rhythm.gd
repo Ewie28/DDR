@@ -29,6 +29,7 @@ func _process(delta):
 			update_background_image()
 
 func _on_start_rhythm_game(level_id):
+	current_camera()
 	# Get the rhythm game manager node
 	var rhythm_game_manager = get_node_or_null("RhythmGameManager")
 	if rhythm_game_manager == null or not level_id in rhythm_game_manager.levels:
@@ -93,3 +94,7 @@ func _on_rhythm_game_ended(_success):
 	# Stop the background cycling and clear the background when the game ends
 	cycling_enabled = false
 	clear_background()
+	
+func current_camera():
+	if Signals.desired_scene =="rhythm":
+		$Rhythm_camera.enabled = true

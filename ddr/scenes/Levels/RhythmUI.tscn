@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c321gnuyfb4d0"]
 
 [ext_resource type="Script" uid="uid://3fi5rjttih7i" path="res://scenes/Levels/rhythm_ui.gd" id="1_qi4n8"]
-[ext_resource type="FontFile" uid="uid://ixnekxu1e453" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="2_tf2vn"]
+[ext_resource type="FontFile" uid="uid://cu47almslblgq" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="2_tf2vn"]
 
 [node name="RhythmUi" type="Control"]
 layout_mode = 3

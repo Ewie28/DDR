@@ -9,6 +9,9 @@ var base_rhythm_instance = null
 
 func _on_body_entered(body: Node2D) -> void:
 	print("Starting rhythm level: " + level_id)
+	Signals.desired_scene = "rhythm"
+	#no need change theme because you arent changing theme.
+	#need to add lock character movement or something in player when rhythm
 	
 	# Hide any UI that needs to be hidden
 	# get_tree().current_scene.visible = false
