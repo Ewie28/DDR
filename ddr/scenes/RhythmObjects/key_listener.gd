@@ -27,22 +27,25 @@ func _process(delta):
 	
 	if falling_key_queue.size() > 0:
 		
-		# If falling key pressed, remove from queue
+		# If falling key missed, remove from queue
 		if is_instance_valid(falling_key_queue.front()) and falling_key_queue.front().has_passed:
-			falling_key_queue.pop_front()
+			var missed_key = falling_key_queue.pop_front()
+			
 			
 			# print miss
 			var st_inst = score_text.instantiate()
 			get_tree().get_root().call_deferred("add_child", st_inst)
 			st_inst.setTextInfo("MISS")
 			st_inst.global_position = global_position
+			missed_key.queue_free()  # Free the missed key
+
 			
 		# If key pressed, pop from queue and calculate distance
 		if Input.is_action_just_pressed(key_name):
 			var key_to_pop = null
 			var distance_from_pass = null
 			var press_score_text: String = ""
-			if falling_key_queue.size() > 0:
+			if falling_key_queue.size() > 0 and is_instance_valid(falling_key_queue.front()):
 				key_to_pop = falling_key_queue.pop_front()
 				distance_from_pass = abs(key_to_pop.pass_threshold - key_to_pop.global_position.y)
 				press_score_text = ""
