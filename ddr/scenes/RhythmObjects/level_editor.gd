@@ -30,13 +30,6 @@ func load_rhythm_level(level_data):
 	# Parse the note data
 	var note_data = str_to_var(level_data.note_data)
 	
-	# Find the RhythmUI
-	var rhythm_ui = get_node_or_null("../../Levels//RhythmUI/rhythm_ui")
-	if rhythm_ui != null and rhythm_ui.has_method("reset_score"):
-		rhythm_ui.reset_score()
-	else:
-		print("Could not find RhythmUI or it doesn't have reset_score method")
-	
 	# Start the music
 	print("Starting music playback")
 	$SongPlayer.play()
@@ -67,17 +60,10 @@ func _on_song_player_finished() -> void:
 	print("Song finished")
 	if in_edit_mode:
 		print(fk_output_arr)
-	else:
-		# Determine if the player passed the level
-		var rhythm_ui = get_node_or_null("../../Levels//RhythmUI/rhythm_ui")
-		var success = false
-		if rhythm_ui != null:
-			success = rhythm_ui.score >= 500  # Lower threshold for testing
-			print("Final score: " + str(rhythm_ui.score))
-		
+	else:		
 		# Wait a moment before ending
 		await get_tree().create_timer(1).timeout
 		
 		# End the rhythm game
 		print("Emitting EndRhythmGame signal")
-		Signals.EndRhythmGame.emit(success)
+		Signals.EndRhythmGame.emit(true)

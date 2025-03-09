@@ -10,6 +10,8 @@ signal StartRhythmGame(level_id: String)
 signal EndRhythmGame(success: bool)
 signal RhythmGameCompleted(level_id: String)
 
+signal RhythmGameResult(score: int, success: bool)
+
 # Scene management
 var current_scene = "outside" #eg. outside, ddr, levels 
 var transition_scene = false
@@ -23,7 +25,7 @@ var player_start_outside_pos_x = 0
 var player_start_outside_pos_y = 0
 
 func _ready():
-	print("Signals script initialized")
+	print("Signals script initialised")
 	# Connect to our own signals for debugging
 	StartRhythmGame.connect(func(level_id): print("StartRhythmGame signal emitted for: " + level_id))
 	CreateFallingKey.connect(func(button): pass)

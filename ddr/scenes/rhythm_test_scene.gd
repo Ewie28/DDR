@@ -15,6 +15,9 @@ func _ready():
 	
 	# Connect to the rhythm game end signal
 	Signals.EndRhythmGame.connect(_on_rhythm_game_ended)
+	
+	# Connect to the new rhythm game result signal
+	Signals.RhythmGameResult.connect(_on_rhythm_game_result)
 
 # When a level button is pressed
 func _on_level_button_pressed(button_name):
@@ -35,12 +38,18 @@ func _on_level_button_pressed(button_name):
 	# Start the selected rhythm game
 	Signals.StartRhythmGame.emit(level_id)
 
+# Handle the result signal
+func _on_rhythm_game_result(score, success):
+	print("(rhythm_test_scene)Rhythm game completed with score: " + str(score))
+	print("Player " + ("PASSED" if success else "FAILED") + " the level")
+
+
 # Show this scene again when a rhythm game ends
 func _on_rhythm_game_ended(_success):
 	if _success:
-		print("Pass")
+		print("game end")
 	else:
-		print("Fail")
+		print("game crashed")
 	
 	# Show the test UI again
 	visible = true
