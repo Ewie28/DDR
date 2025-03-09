@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://vb02y6wvl3sy"]
+[gd_scene load_steps=22 format=4 uid="uid://vb02y6wvl3sy"]
 
 [ext_resource type="Script" uid="uid://bhic5xilqx6bf" path="res://scripts/outside.gd" id="1_7r1kg"]
 [ext_resource type="PackedScene" uid="uid://dhnjts72cui7w" path="res://scenes/player.tscn" id="1_p61qw"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b8wq53buav6xh" path="res://assets/bg/Fences.png" id="3_bkgx0"]
 [ext_resource type="Texture2D" uid="uid://dn0jxb48nr4xa" path="res://assets/bg/Tilled_Dirt_Wide_v2.png" id="3_v7x2m"]
 [ext_resource type="Texture2D" uid="uid://dhkmdm0fj2v0o" path="res://assets/bg/Grass.png" id="7_lt7nq"]
+[ext_resource type="PackedScene" uid="uid://be7wfwh4aloc0" path="res://assets/missions/level_1_cat.tscn" id="11_v7x2m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxbbw"]
 texture = ExtResource("2_lt7nq")
@@ -489,6 +490,10 @@ polygon = PackedVector2Array(-1, 78, 29, 79, 31, 64, 60, 59, 61, 42, 91, 43, 95,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bedroom_transition"]
 position = Vector2(288, 93)
 shape = SubResource("RectangleShape2D_udpx5")
+
+[node name="level_1_cat" parent="." instance=ExtResource("11_v7x2m")]
+position = Vector2(112, 151)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="bedroom_transition" to="." method="_on_bedroom_transition_body_entered"]
 [connection signal="body_exited" from="bedroom_transition" to="." method="_on_bedroom_transition_body_exited"]
