@@ -11,7 +11,7 @@ signal EndRhythmGame(success: bool)
 signal RhythmGameCompleted(level_id: String)
 
 # Scene management
-var current_scene = "outside" #eg. outside, ddr, levels 
+var current_scene = "bedroom" #eg. outside, ddr, levels 
 var transition_scene = false
 
 #exit position

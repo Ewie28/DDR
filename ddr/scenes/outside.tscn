@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://vb02y6wvl3sy"]
+[gd_scene load_steps=32 format=4 uid="uid://vb02y6wvl3sy"]
 
 [ext_resource type="Script" uid="uid://bhic5xilqx6bf" path="res://scripts/outside.gd" id="1_7r1kg"]
 [ext_resource type="PackedScene" uid="uid://dhnjts72cui7w" path="res://scenes/player.tscn" id="1_p61qw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dpevbnli63g2l" path="res://assets/bg/Water.png" id="3_5tstl"]
 [ext_resource type="Texture2D" uid="uid://b8wq53buav6xh" path="res://assets/bg/Fences.png" id="3_bkgx0"]
 [ext_resource type="Texture2D" uid="uid://dn0jxb48nr4xa" path="res://assets/bg/Tilled_Dirt_Wide_v2.png" id="3_v7x2m"]
+[ext_resource type="Texture2D" uid="uid://bwnerhicxf30q" path="res://assets/bg/Basic_Grass_Biom_things.png" id="6_ni2yb"]
 [ext_resource type="Texture2D" uid="uid://dhkmdm0fj2v0o" path="res://assets/bg/Grass.png" id="7_lt7nq"]
 [ext_resource type="PackedScene" uid="uid://be7wfwh4aloc0" path="res://assets/missions/level_1_cat.tscn" id="11_v7x2m"]
 [ext_resource type="PackedScene" uid="uid://b0p3dxj4ktlji" path="res://assets/missions/level_1_lawn.tscn" id="12_x3una"]
@@ -235,6 +236,54 @@ texture = ExtResource("3_5tstl")
 2:0/0 = 0
 3:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pu366"]
+texture = ExtResource("6_ni2yb")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uaw8k"]
 texture = ExtResource("1_udpx5")
 0:0/0 = 0
@@ -438,6 +487,7 @@ sources/10 = SubResource("TileSetAtlasSource_v7x2m")
 sources/11 = SubResource("TileSetAtlasSource_cdqji")
 sources/0 = SubResource("TileSetAtlasSource_nxbbw")
 sources/1 = SubResource("TileSetAtlasSource_ht1us")
+sources/2 = SubResource("TileSetAtlasSource_pu366")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udpx5"]
 size = Vector2(32, 20)
@@ -474,7 +524,7 @@ tile_set = SubResource("TileSet_tjkqt")
 [node name="objects" type="TileMapLayer" parent="TileMap"]
 modulate = Color(0.733333, 0.780392, 1, 1)
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAUAAYACAACAAMAAAAVAAYACAADAAIAAAAOAAYACAABAAIAAAAPAAYACAACAAMAAAAQAAYACAADAAMAAAATAAYACAABAAMAAAAOAAMACAAAAAEAAAAOAAQACAAAAAEAAAAOAAUACAAAAAEAAAAVAAMACAAAAAEAAAAVAAQACAAAAAEAAAAVAAUACAAAAAEAAAAOAAIACAABAAAAAAAPAAIABwADAAAAAAAUAAIABwAEAAAAAAAVAAIACAADAAAAAAAQAAIABwABAAAAAAARAAIABwABAAAAAAASAAIABwABAAAAAAATAAIABwABAAAAAAATAAUABwADAAIAAAAUAAUABwAEAAEAAAARAAUABwABAAEAAAASAAUABwABAAEAAAAQAAUABwABAAIAAAAPAAUABwADAAEAAAAPAAQABwACAAEAAAAPAAMABwACAAEAAAAUAAQABwAAAAEAAAAUAAMABwAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAAUAAYACAACAAMAAAAVAAYACAADAAIAAAAOAAYACAABAAIAAAAPAAYACAACAAMAAAAQAAYACAADAAMAAAATAAYACAABAAMAAAAOAAMACAAAAAEAAAAOAAQACAAAAAEAAAAOAAUACAAAAAEAAAAVAAMACAAAAAEAAAAVAAQACAAAAAEAAAAVAAUACAAAAAEAAAAOAAIACAABAAAAAAAPAAIABwADAAAAAAAUAAIABwAEAAAAAAAVAAIACAADAAAAAAAQAAIABwABAAAAAAARAAIABwABAAAAAAASAAIABwABAAAAAAATAAIABwABAAAAAAATAAUABwADAAIAAAAUAAUABwAEAAEAAAARAAUABwABAAEAAAASAAUABwABAAEAAAAQAAUABwABAAIAAAAPAAUABwADAAEAAAAPAAQABwACAAEAAAAPAAMABwACAAEAAAAUAAQABwAAAAEAAAAUAAMABwAAAAEAAAATABIAAgAHAAAAAAAUABIAAgAIAAAAAAAQABAAAgAHAAAAAAAQABIAAgAIAAAAABAUABAAAgAIAAAAABATABAAAgAHAAAAAAAPABEAAgAHAAAAAAAOABIAAgAHAAAAAAABABUAAgAIAAQAAAAeABQAAgAIAAQAAAAdABUAAgAHAAQAAAAOABUAAgAHAAQAAAADABQAAgAHAAQAAAAFABUAAgAGAAQAAAAgABQAAgAGAAQAAAAYABUAAgAFAAQAAAAVABQAAgAFAAQAAAAHABQAAgAFAAQAAAANABQAAgAGAAQAAAAHABEAAgAGAAIAAAAJABAAAgAGAAIAAAACABIAAgAGAAIAAAADABEAAgAGAAIAAAAIABIAAgAGAAIAAAAHABIAAgAHAAIAAAADABIAAgAHAAIAAAAfABAAAgAFAAEAAAAgABAAAgAGAAEAAAAeABEAAgAFAAEAAAAfABEAAgAGAAEAAAAhABAAAgAGAAEAAAAgABEAAgAFAAEAAAAhABEAAgAGAAEAAAAfAA8AAgAGAAEAAAAhABIAAgAFAAEAAAAbABEAAgAFAAEAAAAaAA8AAgAFAAEAAAAaAA4AAgAFAAEAAAAaAA0AAgAFAAEAAAAZAA4AAgAFAAEAAAAZABEAAgAFAAEAAAAfAAwAAgAFAAEAAAAHAAMAAgAGAAMAAAAGAAIAAgAGAAMAAAAEAAUAAgAGAAMAAAACAAQAAgAGAAMAAAAFAAYAAgAGAAMAAAADAAQAAgAGAAMAAAACAAUAAgAGAAMAAAABAAYAAgAGAAMAAAAHAAUAAgAGAAMAAAAIAAQAAgAGAAMAAAA=")
 tile_set = SubResource("TileSet_tjkqt")
 
 [node name="roof" type="TileMapLayer" parent="TileMap"]
