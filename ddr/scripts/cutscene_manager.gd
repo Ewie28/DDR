@@ -49,6 +49,9 @@ var cutscene_image
 var cutscene_text
 var next_button
 
+var normal_panel
+var normal_button
+
 # Cutscene state
 var current_cutscene = []
 var current_frame = 0
@@ -75,6 +78,8 @@ func find_ui_elements():
 	cutscene_image = cutscene_panel.get_node("CutsceneImage")
 	cutscene_text = cutscene_panel.get_node("CutsceneText")
 	next_button = cutscene_panel.get_node("NextButton")
+	normal_panel = bedroom.get_node("Panel")
+	normal_button = bedroom.get_node("Button")
 
 	# Connect button signal again to avoid duplicate connections
 	next_button.pressed.disconnect(_on_next_button_pressed)
@@ -133,6 +138,8 @@ func play_cutscene(cutscene_name, is_ending_cutscene = false):
 	current_cutscene = cutscenes[cutscene_name]["scenes"]
 	current_frame = 0
 	cutscene_panel.visible = true
+	normal_button.visible = false
+	normal_panel.visible = false
 
 	show_current_frame()
 	print("Playing cutscene: " + cutscene_name)
@@ -159,6 +166,8 @@ func _on_next_button_pressed():
 func end_cutscene():
 	cutscene_panel.visible = false
 	is_in_cutscene = false
+	normal_button.visible = true
+	normal_panel.visible = true
 
 	if has_node("/root/MusicManager"):
 		get_node("/root/MusicManager").stop_cutscene_music()  # Stop robot sound

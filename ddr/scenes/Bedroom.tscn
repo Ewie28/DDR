@@ -85,7 +85,7 @@ vertical_alignment = 1
 visible = false
 layout_mode = 0
 offset_right = 1152.0
-offset_bottom = 647.0
+offset_bottom = 648.0
 
 [node name="CutsceneImage" type="TextureRect" parent="CutscenePanel"]
 layout_mode = 0
