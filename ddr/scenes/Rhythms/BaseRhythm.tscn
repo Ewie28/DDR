@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bvl6s4wmwd3o6" path="res://scenes/RhythmObjects/rhythm_game_manager.tscn" id="1_ekfno"]
 [ext_resource type="Script" uid="uid://nyjod1eha4x0" path="res://scenes/Rhythms/base_rhythm.gd" id="1_rg0q4"]
 [ext_resource type="PackedScene" uid="uid://c321gnuyfb4d0" path="res://scenes/Levels/RhythmUI.tscn" id="2_htu04"]
-[ext_resource type="Texture2D" uid="uid://c45ptni1c2rsv" path="res://assets/rhythm/blue.jpg" id="3_4ibeq"]
+[ext_resource type="Texture2D" uid="uid://b2lp8rcn6b0jn" path="res://assets/rhythm/blue.jpg" id="3_4ibeq"]
 [ext_resource type="PackedScene" uid="uid://cptguqjpcgio4" path="res://scenes/RhythmObjects/level_editor.tscn" id="4_brmj2"]
-[ext_resource type="Texture2D" uid="uid://cs3txu3wyc618" path="res://assets/rhythm/textbox.png" id="7_gcwak"]
-[ext_resource type="Script" path="res://scenes/Rhythms/textbox.gd" id="8_4ibeq"]
-[ext_resource type="FontFile" uid="uid://cu47almslblgq" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="9_4ibeq"]
+[ext_resource type="Texture2D" uid="uid://dpii333pdjbl0" path="res://assets/rhythm/textbox.png" id="7_gcwak"]
+[ext_resource type="Script" uid="uid://dwesgxujllxs2" path="res://scenes/Rhythms/textbox.gd" id="8_4ibeq"]
+[ext_resource type="FontFile" uid="uid://ixnekxu1e453" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="9_4ibeq"]
 
 [node name="BaseRhythm" type="Node2D"]
 script = ExtResource("1_rg0q4")

@@ -8,6 +8,10 @@ var base_rhythm_instance = null
 
 @export var day_active = 3  # The day this mission should be active
 
+func _ready():
+	Signals.EndRhythmGame.connect(_on_rhythm_game_ended)
+	Signals.RhythmGameResult.connect(_on_rhythm_game_result)
+
 func update_active_state():
 	# Check the current day and enable/disable interactability accordingly
 	if Signals.current_day == day_active:
