@@ -85,3 +85,7 @@ func _on_rhythm_game_ended(_success):
 	if base_rhythm_instance != null:
 		base_rhythm_instance.queue_free()
 		base_rhythm_instance = null
+	
+	if (Signals.missions_failed == Signals.MAX_FAILURES):
+		Signals.mark_mission_completed(mission_id)
+		set_active(false)
