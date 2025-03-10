@@ -8,6 +8,8 @@ var base_rhythm_instance = null
 
 @export var day_active = 1  # The day this mission should be active
 
+var completed = false;
+
 func _ready():
 	Signals.EndRhythmGame.connect(_on_rhythm_game_ended)
 	Signals.RhythmGameResult.connect(_on_rhythm_game_result)
@@ -15,7 +17,7 @@ func _ready():
 
 func update_active_state():
 	# Check the current day and enable/disable interactability accordingly
-	if Signals.current_day == day_active:
+	if (Signals.current_day == day_active) and !completed:
 		print("Setting active: true")
 		set_active(true)  # Clickable
 	else:
@@ -48,6 +50,8 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# Start the selected rhythm game
 	Signals.StartRhythmGame.emit(level_id)
+	set_active(false)
+	completed = true
 
 # Handle the result signal
 func _on_rhythm_game_result(score, success):
