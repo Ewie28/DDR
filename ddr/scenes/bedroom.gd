@@ -1,5 +1,13 @@
 extends Control
 
+func _ready():
+	check_next_day()
+	
+func check_next_day():
+	if Signals.missions_attempted >= Signals.MAX_MISSIONS:
+		Signals.next_day()
+		print("next day")
+
 #to go to outside
 func on_start_pressed() -> void:
 	Signals.transition_scene = true

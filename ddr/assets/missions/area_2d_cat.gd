@@ -7,10 +7,11 @@ var level_id = "rhythm1"
 var base_rhythm_instance = null
 
 @export var day_active = 1  # The day this mission should be active
+var attempted = false  # Track if mission has been attempted today
 
 func update_active_state():
 	# Check the current day and enable/disable interactability accordingly
-	if Signals.current_day == day_active:
+	if Signals.current_day == day_active && attempted == false:
 		print("Setting active: true")
 		set_active(true)  # Clickable
 	else:
@@ -20,7 +21,7 @@ func update_active_state():
 func set_active(is_active: bool):
 	set_deferred("monitoring", is_active)  # Enable/disable collision detection
 	set_deferred("input_pickable", is_active)  # Enable/disable interactions
-	 # Find the AnimatedSprite2D and modify its appearance
+	
 	var sprite = get_parent().get_node("Sprite2D")  # Move up to level_1_cat, then find Sprite2D
 	if sprite:
 		var texture_path = "res://mission_sprites/level1_cat.png" if is_active else "res://mission_sprites/level1_cat_grey.png"
@@ -29,7 +30,7 @@ func set_active(is_active: bool):
 func _on_body_entered(body: Node2D) -> void:
 	print("Starting rhythm level: " + level_id)
 	Signals.desired_scene = "rhythm"
-	
+	attempted = true
 	# Hide any UI that needs to be hidden
 	# get_tree().current_scene.visible = false
 	
