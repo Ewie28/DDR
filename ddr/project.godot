@@ -17,6 +17,7 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 Signals="*res://scenes/RhythmObjects/signals.gd"
+MusicManager="*res://scripts/music_manager.gd"
 
 [display]
 

@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	Signals.DayAdvanced.connect(update_interactable_nodes)  # Connect signal ONCE
 	update_interactable_nodes()  # Update interactable nodes when the scene loads
+	MusicManager.play_outside_music()
 	
 func update_interactable_nodes():
 	for node in get_tree().get_nodes_in_group("interactables"):

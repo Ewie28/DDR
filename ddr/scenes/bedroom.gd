@@ -5,6 +5,7 @@ extends Control
 func _ready():
 	# Update the background based on current failure count
 	update_failure_background()
+	MusicManager.play_bedroom_music()
 
 #to go to outside
 func on_start_pressed() -> void:
