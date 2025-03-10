@@ -57,6 +57,10 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_rhythm_game_result(score, success):
 	print("Rhythm game completed with score: " + str(score))
 	print("Player " + ("PASSED" if success else "FAILED") + " the level")
+	
+	if (!success):
+		print("MINUS ONE LIFE")
+		Signals.increment_failures()
 
 # Show the world again when a rhythm game ends
 func _on_rhythm_game_ended(_success):

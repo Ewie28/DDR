@@ -6,6 +6,9 @@ var current_day = 1
 var missions_attempted = 0
 const MAX_MISSIONS = 3
 
+var missions_failed = 0
+const MAX_FAILURES = 5
+
 signal DayAdvanced
 
 signal IncrementScore(incr: int)
@@ -65,3 +68,7 @@ func next_day():
 	missions_attempted = 0
 	print("Advancing to Day", current_day)
 	DayAdvanced.emit()  # Notify scenes to update interactables
+	
+func increment_failures():
+	missions_failed = min(missions_failed + 1, MAX_FAILURES)
+	print("Rhythm failures increased to: " + str(missions_failed))
