@@ -8,12 +8,14 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxlp7"]
 texture = ExtResource("1_13mbk")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6qhh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjqwp"]
 bg_color = Color(0.666667, 0.470588, 0.34902, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+shadow_color = Color(0.273528, 0.141422, 0.0472221, 1)
+shadow_size = 4
 
 [node name="Bedroom" type="Control"]
 layout_mode = 3
@@ -47,9 +49,12 @@ offset_right = 115.0
 offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_n6qhh")
-text = "Start game!"
+theme_override_colors/font_outline_color = Color(0.409476, 0.223177, 0.0905793, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("4_qjqwp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_qjqwp")
+text = "start!"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -79,5 +84,39 @@ theme_override_font_sizes/font_size = 150
 text = "ODD JOB ROB_OT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CutscenePanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 647.0
+
+[node name="CutsceneImage" type="TextureRect" parent="CutscenePanel"]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 645.0
+
+[node name="CutsceneText" type="Label" parent="CutscenePanel"]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 459.0
+offset_right = 933.0
+offset_bottom = 531.0
+theme_override_colors/font_color = Color(0.633356, 0.989217, 0.633485, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_qjqwp")
+theme_override_font_sizes/font_size = 50
+text = "TEST"
+
+[node name="NextButton" type="Button" parent="CutscenePanel"]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 551.0
+offset_right = 1111.0
+offset_bottom = 618.0
+theme_override_fonts/font = ExtResource("4_qjqwp")
+theme_override_font_sizes/font_size = 50
+text = "Next"
+icon_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="on_start_pressed"]

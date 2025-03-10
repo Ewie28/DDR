@@ -6,6 +6,9 @@ func _ready():
 	# Update the background based on current failure count
 	update_failure_background()
 	MusicManager.play_bedroom_music()
+	
+	# Check if we need to play a cutscene upon entering the bedroom
+	CutsceneManager.check_bedroom_entry()
 
 #to go to outside
 func on_start_pressed() -> void:

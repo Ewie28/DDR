@@ -9,6 +9,8 @@ const MAX_MISSIONS = 3
 var missions_failed = 0
 const MAX_FAILURES = 5
 
+
+
 signal DayAdvanced
 
 signal IncrementScore(incr: int)
@@ -35,6 +37,21 @@ var player_exit_outside_pos_y = 0
 #starting position
 var player_start_outside_pos_x = 0
 var player_start_outside_pos_y = 0
+
+var completed_missions = {}  # Dictionary to track completed missions by ID
+
+# check if a mission is completed
+# For signals.gd - add these debug statements
+func is_mission_completed(mission_id: String) -> bool:
+	var is_completed = mission_id in completed_missions and completed_missions[mission_id] == true
+	print("Checking if mission " + mission_id + " is completed: " + str(is_completed))
+	print("Current completed_missions: " + str(completed_missions))
+	return is_completed
+
+func mark_mission_completed(mission_id: String):
+	completed_missions[mission_id] = true
+	print("Mission marked as completed: " + mission_id)
+	print("Updated completed_missions: " + str(completed_missions))
 
 func _ready():
 	print("Signals script initialised")
@@ -67,7 +84,7 @@ func next_day():
 	current_day += 1
 	missions_attempted = 0
 	print("Advancing to Day", current_day)
-	DayAdvanced.emit()  # Notify scenes to update interactables
+	#DayAdvanced.emit()  # Notify scenes to update interactables
 	
 func increment_failures():
 	missions_failed = min(missions_failed + 1, MAX_FAILURES)

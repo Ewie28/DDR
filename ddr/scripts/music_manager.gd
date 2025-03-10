@@ -74,9 +74,5 @@ func _on_rhythm_game_start(_level_id):
 
 # Rhythm game end - resume appropriate music
 func _on_rhythm_game_end(_success):
-	# Check which scene we should return to
-	if Signals.current_scene == "bedroom":
-		play_bedroom_music()
-	elif Signals.current_scene == "outside":
-		play_outside_music()
+	play_outside_music()
 	print("Resuming music after rhythm game")

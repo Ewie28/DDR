@@ -18,6 +18,7 @@ config/icon="res://art/icon.svg"
 
 Signals="*res://scenes/RhythmObjects/signals.gd"
 MusicManager="*res://scripts/music_manager.gd"
+CutsceneManager="*res://scripts/cutscene_manager.gd"
 
 [display]
 

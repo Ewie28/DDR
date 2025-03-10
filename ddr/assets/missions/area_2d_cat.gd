@@ -1,27 +1,33 @@
 extends Area2D
 	
 var level_id = "rhythm1"
-
 # Reference to the BaseRhythm scene (preload it)
 @onready var base_rhythm_scene = preload("res://scenes/Rhythms/BaseRhythm.tscn")
 var base_rhythm_instance = null
-
 @export var day_active = 1  # The day this mission should be active
-
-var completed = false;
+@export var mission_id = "mission1" 
 
 func _ready():
+	print("Area2D Cat _ready called for mission: " + mission_id)
 	Signals.EndRhythmGame.connect(_on_rhythm_game_ended)
 	Signals.RhythmGameResult.connect(_on_rhythm_game_result)
-
+	# Add a small delay to ensure Signals is fully ready
+	get_tree().create_timer(0.1).timeout.connect(func(): update_active_state())
 
 func update_active_state():
+	print("Updating active state for mission: " + mission_id)
+	# First check if this mission has already been completed
+	if Signals.is_mission_completed(mission_id):
+		print("Mission " + mission_id + " already completed, setting inactive")
+		set_active(false)
+		return
+	
 	# Check the current day and enable/disable interactability accordingly
-	if (Signals.current_day == day_active) and !completed:
-		print("Setting active: true")
+	if (Signals.current_day == day_active):
+		print("Day matches for mission " + mission_id + ", setting active: true")
 		set_active(true)  # Clickable
 	else:
-		print("Setting active: false")
+		print("Day doesn't match for mission " + mission_id + ", setting active: false")
 		set_active(false)  # Greyed out
 
 func set_active(is_active: bool):
@@ -34,6 +40,7 @@ func set_active(is_active: bool):
 		sprite.texture = load(texture_path)
 
 func _on_body_entered(body: Node2D) -> void:
+	Signals.mark_mission_completed(mission_id)
 	print("Starting rhythm level: " + level_id)
 	Signals.desired_scene = "rhythm"
 	
@@ -51,28 +58,28 @@ func _on_body_entered(body: Node2D) -> void:
 	# Start the selected rhythm game
 	Signals.StartRhythmGame.emit(level_id)
 	set_active(false)
-	completed = true
 
-# Handle the result signal
 func _on_rhythm_game_result(score, success):
-	print("Rhythm game completed with score: " + str(score))
+	print("Rhythm game completed with score: " + str(score) + " for mission: " + mission_id)
 	print("Player " + ("PASSED" if success else "FAILED") + " the level")
-	
 	if (!success):
 		print("MINUS ONE LIFE")
 		Signals.increment_failures()
+	
 
 # Show the world again when a rhythm game ends
 func _on_rhythm_game_ended(_success):
 	#add cutscene here when game completed
 	Signals.desired_scene = "outside"
 	if _success:
-		print("game end")
+		print("end success")
 	else:
-		print("game crashed")
-	
+		print("game ended not  success")
 	# Show the world UI again if needed
 	# get_tree().current_scene.visible = true
+	Signals.attempt_mission()
+	print(str(Signals.missions_attempted) + " missions done on day " + str(Signals.current_day))
+	
 	
 	# Remove the rhythm game instance
 	if base_rhythm_instance != null:
