@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var background_image = $BackgroundImage  # Reference to the TextureRect
+@onready var background_image = $BackgroundImage
 
 # Background cycling variables
 var background_images = []
@@ -94,7 +94,8 @@ func _on_rhythm_game_ended(_success):
 	# Stop the background cycling and clear the background when the game ends
 	cycling_enabled = false
 	clear_background()
-	
+
 func current_camera():
 	if Signals.desired_scene =="rhythm":
 		$Rhythm_camera.enabled = true
+		

@@ -1,5 +1,9 @@
 extends Area2D
-	
+
+var HintUI = preload("res://scenes/hintbox.tscn")
+var hint_ui_instance = null
+
+
 var level_id = "rhythm1"
 # Reference to the BaseRhythm scene (preload it)
 @onready var base_rhythm_scene = preload("res://scenes/Rhythms/BaseRhythm.tscn")
@@ -8,6 +12,11 @@ var base_rhythm_instance = null
 @export var mission_id = "mission1" 
 
 func _ready():
+	
+	# Create and add the hint UI instance
+	hint_ui_instance = HintUI.instantiate()
+	add_child(hint_ui_instance)
+	
 	print("Area2D Cat _ready called for mission: " + mission_id)
 	Signals.EndRhythmGame.connect(_on_rhythm_game_ended)
 	Signals.RhythmGameResult.connect(_on_rhythm_game_result)
@@ -89,3 +98,20 @@ func _on_rhythm_game_ended(_success):
 	if (Signals.missions_failed == Signals.MAX_FAILURES):
 		Signals.mark_mission_completed(mission_id)
 		set_active(false)
+	
+	var timer = get_tree().create_timer(3.0)
+	timer.timeout.connect(show_fail_hint)
+	
+func show_hint(text_message: String) -> void:
+	if hint_ui_instance:
+		hint_ui_instance.show_hint(text_message)
+		print("HINT shown")
+
+func show_fail_hint() -> void:
+	# Show the hint after the 6-second delay
+	if Signals.missions_failed == 5:
+		return
+	if Signals.missions_attempted == 0:
+		show_hint("That's enough for today. Let's go home!")
+	else:
+		return
