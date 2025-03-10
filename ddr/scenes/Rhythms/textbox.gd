@@ -1,6 +1,8 @@
 extends Sprite2D
 
 @onready var quest_text = $questText
+@onready var pass_sfx = $PassSFX
+@onready var fail_sfx = $FailSFX
 
 func _ready():
 	# Hide the textbox initially
@@ -23,8 +25,10 @@ func _on_rhythm_game_result(score: int, success: bool):
 			# Set the appropriate text based on success
 			if success and "win_text" in level_data:
 				quest_text.text = level_data.win_text
+				pass_sfx.play()
 			elif not success and "lose_text" in level_data:
 				quest_text.text = level_data.lose_text
+				fail_sfx.play()
 			else:
 				quest_text.text = "Level " + (level_data.title if "title" in level_data else level_id) + \
 								 " " + ("completed!" if success else "failed!")
