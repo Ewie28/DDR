@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdl4go110qar4"]
+
+[ext_resource type="FontFile" uid="uid://cu47almslblgq" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="1_ry041"]
+[ext_resource type="Script" uid="uid://bckbwjo3i4i2r" path="res://scenes/odd_jobs_counter.gd" id="1_x7vhs"]
+[ext_resource type="PackedScene" uid="uid://vb02y6wvl3sy" path="res://scenes/outside.tscn" id="2_38chv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7vhs"]
+bg_color = Color(0.541176, 0.396078, 0.223529, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.466667, 0.290196, 0.0705882, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="OddJobsCounter" type="CanvasLayer"]
+script = ExtResource("1_x7vhs")
+
+[node name="Outside" parent="." instance=ExtResource("2_38chv")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.814236
+anchor_right = 1.0
+anchor_bottom = 0.154321
+offset_left = -588.0
+offset_top = 50.0
+offset_right = -588.0
+offset_bottom = 50.0
+grow_horizontal = 2
+scale = Vector2(0.3, 0.3)
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x7vhs")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_ry041")
+theme_override_font_sizes/font_size = 28
+text = "0/3 odd jobs done"

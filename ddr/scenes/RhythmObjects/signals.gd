@@ -56,8 +56,10 @@ func attempt_mission():
 	if missions_attempted < MAX_MISSIONS:
 		missions_attempted += 1
 		print("Mission", missions_attempted, "completed for Day", current_day)
+		#text change _ /3 odd jobs completed
 
 	if missions_attempted == MAX_MISSIONS:
+		#text change saying go back home to start next day
 		next_day()
 		
 func next_day():

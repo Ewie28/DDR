@@ -17,6 +17,7 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 Signals="*res://scenes/RhythmObjects/signals.gd"
+OddJobsCounter="res://scenes/odd_jobs_counter.gd"
 
 [display]
 
