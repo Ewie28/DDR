@@ -1,7 +1,7 @@
 extends Control
 
 var score: int = 0
-var pass_threshold: int = 10000 
+var pass_threshold: int = 17000 
 
 # Called when node enters scene tree for first time
 func _ready():

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var background_panel = $Panel
-@onready var start_button = $Button  # Adjust this if your button has a different path
+@onready var start_button = $Button 
 
 func _ready():
 	# Update the background based on current failure count

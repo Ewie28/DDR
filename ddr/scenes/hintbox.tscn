@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy2te7k4fd14h"]
+
+[ext_resource type="Script" uid="uid://xsl10em5wogx" path="res://scenes/hintbox.gd" id="1_l3nxq"]
+[ext_resource type="Texture2D" uid="uid://dpii333pdjbl0" path="res://assets/rhythm/textbox.png" id="1_qcf2l"]
+[ext_resource type="FontFile" uid="uid://ixnekxu1e453" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="3_tlwqe"]
+
+[node name="Hintbox" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l3nxq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Textbox" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(916, 536)
+scale = Vector2(0.5, 0.423077)
+texture = ExtResource("1_qcf2l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Textbox"]
+offset_left = -350.0
+offset_top = -111.091
+offset_right = 330.0
+offset_bottom = 92.9091
+theme_override_colors/default_color = Color(0.552941, 0.25098, 0.356863, 1)
+theme_override_fonts/normal_font = ExtResource("3_tlwqe")
+theme_override_font_sizes/normal_font_size = 60
+text = "tes tes te s t setestsetste"
+horizontal_alignment = 1
+vertical_alignment = 1
