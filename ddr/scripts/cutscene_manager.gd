@@ -118,10 +118,11 @@ func play_cutscene(cutscene_name, is_ending_cutscene = false):
 	
 	if has_node("/root/MusicManager"):
 		get_node("/root/MusicManager").stop_all_music()
+		get_node("/root/MusicManager").play_cutscene_music()  # Play robot sound
 	
 	current_cutscene = cutscenes[cutscene_name]
 	current_frame = 0
-	cutscene_panel.visible = true  # Now this won't error!
+	cutscene_panel.visible = true
 
 	show_current_frame()
 	print("Playing cutscene: " + cutscene_name)
@@ -148,6 +149,9 @@ func end_cutscene():
 	cutscene_panel.visible = false
 	is_in_cutscene = false
 
+	if has_node("/root/MusicManager"):
+		get_node("/root/MusicManager").stop_cutscene_music()  # Stop robot sound
+	
 	if not is_ending:
 		if Signals.missions_attempted >= Signals.MAX_MISSIONS:
 			Signals.next_day()
