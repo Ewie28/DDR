@@ -12,6 +12,7 @@ func _ready():
 	Signals.EndRhythmGame.connect(_on_rhythm_game_ended)
 	Signals.RhythmGameResult.connect(_on_rhythm_game_result)
 
+
 func update_active_state():
 	# Check the current day and enable/disable interactability accordingly
 	if Signals.current_day == day_active:
@@ -55,6 +56,8 @@ func _on_rhythm_game_result(score, success):
 
 # Show the world again when a rhythm game ends
 func _on_rhythm_game_ended(_success):
+	#add cutscene here when game completed
+	Signals.desired_scene = "outside"
 	if _success:
 		print("game end")
 	else:

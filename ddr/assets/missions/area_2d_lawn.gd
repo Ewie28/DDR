@@ -56,6 +56,8 @@ func _on_rhythm_game_result(score, success):
 
 # Show the world again when a rhythm game ends
 func _on_rhythm_game_ended(_success):
+	#add cutscene here when game completed
+	Signals.desired_scene = "outside"
 	if _success:
 		print("game end")
 	else:
