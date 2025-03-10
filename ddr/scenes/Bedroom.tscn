@@ -1,21 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2pj1g05ekrn4"]
+[gd_scene load_steps=8 format=3 uid="uid://d2pj1g05ekrn4"]
 
 [ext_resource type="Texture2D" uid="uid://by3snty25nngf" path="res://assets/bg/bedroom_full.png" id="1_13mbk"]
 [ext_resource type="Script" uid="uid://ctjosvs6hwvdg" path="res://scenes/bedroom.gd" id="1_nttrf"]
 [ext_resource type="PackedScene" uid="uid://dhnjts72cui7w" path="res://scenes/player.tscn" id="2_qxlp7"]
+[ext_resource type="StyleBox" uid="uid://bfaeqbb3eoa28" path="res://scenes/stylebox_flat.tres" id="4_mifx2"]
 [ext_resource type="FontFile" uid="uid://ixnekxu1e453" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="4_qjqwp"]
+[ext_resource type="StyleBox" uid="uid://hsmijw43lwbs" path="res://scenes/stylebox_normal.tres" id="5_4b17u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxlp7"]
 texture = ExtResource("1_13mbk")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjqwp"]
-bg_color = Color(0.666667, 0.470588, 0.34902, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-shadow_color = Color(0.273528, 0.141422, 0.0472221, 1)
-shadow_size = 4
 
 [node name="Bedroom" type="Control"]
 layout_mode = 3
@@ -53,7 +46,10 @@ theme_override_colors/font_outline_color = Color(0.409476, 0.223177, 0.0905793, 
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("4_qjqwp")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_qjqwp")
+theme_override_styles/hover = ExtResource("4_mifx2")
+theme_override_styles/pressed_mirrored = ExtResource("4_mifx2")
+theme_override_styles/pressed = ExtResource("4_mifx2")
+theme_override_styles/normal = ExtResource("5_4b17u")
 text = "start!"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -103,19 +99,25 @@ offset_top = 459.0
 offset_right = 933.0
 offset_bottom = 531.0
 theme_override_colors/font_color = Color(0.633356, 0.989217, 0.633485, 1)
-theme_override_constants/outline_size = 5
+theme_override_colors/font_outline_color = Color(0, 0.372549, 0, 1)
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("4_qjqwp")
 theme_override_font_sizes/font_size = 50
 text = "TEST"
 
 [node name="NextButton" type="Button" parent="CutscenePanel"]
 layout_mode = 0
-offset_left = 962.0
-offset_top = 551.0
+offset_left = 959.0
+offset_top = 563.0
 offset_right = 1111.0
 offset_bottom = 618.0
+theme_override_colors/font_outline_color = Color(0.409476, 0.223177, 0.0905793, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("4_qjqwp")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 38
+theme_override_styles/hover = ExtResource("4_mifx2")
+theme_override_styles/pressed = ExtResource("4_mifx2")
+theme_override_styles/normal = ExtResource("5_4b17u")
 text = "Next"
 icon_alignment = 1
 
