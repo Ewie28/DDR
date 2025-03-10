@@ -163,12 +163,17 @@ func end_cutscene():
 	if has_node("/root/MusicManager"):
 		get_node("/root/MusicManager").stop_cutscene_music()  # Stop robot sound
 	
-	if not is_ending:
+	var bedroom = get_tree().current_scene
+
+	if is_ending:
+		# Disable the start button for good/bad endings
+		if bedroom.has_method("disable_start_button"):
+			bedroom.disable_start_button()
+		print("Game has ended!")
+	else:
 		if Signals.missions_attempted >= Signals.MAX_MISSIONS:
 			Signals.next_day()
 		if has_node("/root/MusicManager"):
 			get_node("/root/MusicManager").play_bedroom_music()
 		if Signals.current_scene != "bedroom":
 			get_tree().change_scene_to_file("res://scenes/Bedroom.tscn")
-	else:
-		print("Game has ended!")

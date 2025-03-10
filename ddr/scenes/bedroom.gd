@@ -1,20 +1,36 @@
 extends Control
 
 @onready var background_panel = $Panel
+@onready var start_button = $Button  # Adjust this if your button has a different path
 
 func _ready():
 	# Update the background based on current failure count
 	update_failure_background()
 	MusicManager.play_bedroom_music()
-	
+	update_start_button()
 	# Check if we need to play a cutscene upon entering the bedroom
 	CutsceneManager.check_bedroom_entry()
 
-#to go to outside
+# Update the start button text based on the current day
+func update_start_button():
+	if start_button:
+		start_button.text = "Day " + str(Signals.current_day)
+
+# Disable the start button and change its text
+func disable_start_button():
+	start_button.text = "Game Over!"
+	start_button.disabled = true
+
+# To go to outside
 func on_start_pressed() -> void:
+	# Prevent scene transition if button is disabled
+	if start_button.disabled:
+		return
+	
 	Signals.transition_scene = true
 	Signals.desired_scene = "outside"
 	change_scene()
+
 	
 func change_scene():
 	if Signals.transition_scene == true:
