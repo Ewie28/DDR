@@ -1,6 +1,6 @@
 extends Area2D
 	
-var level_id = "rhythm6"
+var level_id = "rhythm3"
 
 # Reference to the BaseRhythm scene (preload it)
 @onready var base_rhythm_scene = preload("res://scenes/Rhythms/BaseRhythm.tscn")
