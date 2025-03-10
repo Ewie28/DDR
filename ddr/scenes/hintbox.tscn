@@ -13,6 +13,7 @@ script = ExtResource("1_l3nxq")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Textbox" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(916, 536)
 scale = Vector2(0.5, 0.423077)
 texture = ExtResource("1_qcf2l")

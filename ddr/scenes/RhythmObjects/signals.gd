@@ -1,5 +1,7 @@
 extends Node2D
 var rhythm_level_id = "default"
+var HintUI = preload("res://scenes/hintbox.tscn")
+var hint_ui_instance = null
 
 #for missions 
 var current_day = 1
@@ -59,6 +61,10 @@ func _ready():
 	StartRhythmGame.connect(func(level_id): print("StartRhythmGame signal emitted for: " + level_id))
 	CreateFallingKey.connect(func(button): pass)
 	EndRhythmGame.connect(func(success): print("EndRhythmGame signal emitted with success: " + str(success)))
+	
+	# Create and add the hint UI instance
+	hint_ui_instance = HintUI.instantiate()
+	add_child(hint_ui_instance)
 
 func finish_change_scene():
 	if transition_scene == true:
@@ -89,3 +95,23 @@ func next_day():
 func increment_failures():
 	missions_failed = min(missions_failed + 1, MAX_FAILURES)
 	print("Rhythm failures increased to: " + str(missions_failed))
+	var timer = get_tree().create_timer(6.0)
+	timer.timeout.connect(show_fail_hint)
+	
+func show_hint(text_message: String) -> void:
+	if hint_ui_instance:
+		hint_ui_instance.show_hint(text_message)
+		print("HINT shown")
+
+func show_fail_hint() -> void:
+	# Show the hint after the 6-second delay
+	if missions_failed == 1:
+		show_hint("Gotta sell the bed to pay the bills... :(")
+	elif missions_failed == 2:
+		show_hint("The carpet wasn't doing much anyway...")
+	elif missions_failed == 3:
+		show_hint("I'll put the fridge on facebook marketplace...")
+	elif missions_failed == 4:
+		show_hint("That's alright, I'll sit on the floor...")
+	elif missions_failed == 5:
+		show_hint("I'll sell my plant :(")
