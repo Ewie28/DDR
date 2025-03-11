@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnm6jlcr1fmxo"]
 
-[ext_resource type="Texture2D" uid="uid://o7xpe12fp1rd" path="res://assets/rhythm/arrows.webp" id="1_v4xk1"]
+[ext_resource type="Texture2D" uid="uid://ddyuywg3lduwj" path="res://assets/rhythm/arrows.webp" id="1_v4xk1"]
 [ext_resource type="Script" uid="uid://dn458at321ak1" path="res://scenes/RhythmObjects/falling_key.gd" id="2_wrv15"]
 
 [node name="FallingKey" type="Sprite2D"]
