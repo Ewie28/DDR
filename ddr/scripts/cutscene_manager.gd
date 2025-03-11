@@ -6,40 +6,40 @@ extends Node
 var cutscenes = {
 	"day1_intro": {
 		"scenes": [
-			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_1.png", "text": "In a world without humans... Robots take over"},
-			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_2.png", "text": "Rob-ot has graduated!"},
-			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_3.png", "text": "...but he can't land a job (like the humans)"},
-			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_4.png", "text": "he must do odd jobs to pay the bills"},
-			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_5.png", "text": "damn those ai he says [ ironic ]"}
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_1.png", "text": "In a world without humans... Robots take over."},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_2.png", "text": "I, Rob-ot graduated with a CompSci degree."},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_3.png", "text": "...but where are the internships?"},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_4.png", "text": "I must do odd jobs to pay the bills"},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_5.png", "text": "Damn AI taking all the jobs!"}
 		],
 		"played": false
 	},
 	"day1_to_day2": {
 		"scenes": [
 			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_1.png", "text": "I paid all my bills for the day"},
-			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_2.png", "text": "...and also a pack of pokemon cards!"},
-			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_3.png", "text": "i got 5 magikarps..."}
+			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_2.png", "text": "...and also got a pack of pokemon cards!"},
+			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_3.png", "text": "I pulled 5 magikarps..."}
 		],
 		"played": false
 	},
 	"day2_to_day3": {
 		"scenes": [
 			{"image": "res://assets/rhythm/cutscenes/day2-3_cutscene_1.png", "text": "muscles = ladies"},
-			{"image": "res://assets/rhythm/cutscenes/day2-3_cutscene_2.png", "text": "rob-ot has no arms"},
+			{"image": "res://assets/rhythm/cutscenes/day2-3_cutscene_2.png", "text": "I have no arms"},
 			{"image": "res://assets/rhythm/cutscenes/day2-3_cutscene_3.png", "text": "a gym membership would help..."}
 		],
 		"played": false
 	},
 	"good_ending": {
 		"scenes": [
-			{"image": "res://assets/cutscenes/good_end/image1.png", "text": "im pretty good at odd jobs"},
+			{"image": "res://assets/cutscenes/good_end/image1.png", "text": "I'm pretty good at odd jobs"},
 			{"image": "res://assets/cutscenes/good_end/image2.png", "text": "game over"}
 		],
 		"played": false
 	},
 	"bad_ending": {
 		"scenes": [
-			{"image": "res://assets/rhythm/cutscenes/bad_ending_cutscene.png", "text": "Oh no! You've failed too many times..."}
+			{"image": "res://assets/rhythm/cutscenes/bad_ending_cutscene.png", "text": "I've failed too many times... odd jobs aren't cutting it"}
 		],
 		"played": false
 	}

@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bvl6s4wmwd3o6" path="res://scenes/RhythmObjects/rhythm_game_manager.tscn" id="1_ekfno"]
 [ext_resource type="Script" uid="uid://nyjod1eha4x0" path="res://scenes/Rhythms/base_rhythm.gd" id="1_rg0q4"]
 [ext_resource type="PackedScene" uid="uid://c321gnuyfb4d0" path="res://scenes/Levels/RhythmUI.tscn" id="2_htu04"]
-[ext_resource type="Texture2D" uid="uid://c45ptni1c2rsv" path="res://assets/rhythm/blue.jpg" id="3_4ibeq"]
+[ext_resource type="Texture2D" uid="uid://b2lp8rcn6b0jn" path="res://assets/rhythm/blue.jpg" id="3_4ibeq"]
 [ext_resource type="PackedScene" uid="uid://cptguqjpcgio4" path="res://scenes/RhythmObjects/level_editor.tscn" id="4_brmj2"]
-[ext_resource type="Texture2D" uid="uid://cs3txu3wyc618" path="res://assets/rhythm/textbox.png" id="7_gcwak"]
+[ext_resource type="Texture2D" uid="uid://dpii333pdjbl0" path="res://assets/rhythm/textbox.png" id="7_gcwak"]
 [ext_resource type="Script" uid="uid://dwesgxujllxs2" path="res://scenes/Rhythms/textbox.gd" id="8_4ibeq"]
-[ext_resource type="FontFile" uid="uid://cu47almslblgq" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="9_4ibeq"]
-[ext_resource type="AudioStream" uid="uid://00ko6t3piqmn" path="res://assets/audio/pass_sfx.wav" id="10_5hsaw"]
-[ext_resource type="AudioStream" uid="uid://dhttp4cqgjyac" path="res://assets/audio/fail_sfx.wav" id="11_eyn67"]
+[ext_resource type="FontFile" uid="uid://ixnekxu1e453" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="9_4ibeq"]
+[ext_resource type="AudioStream" uid="uid://c4wsplnxt6buj" path="res://assets/audio/pass_sfx.wav" id="10_5hsaw"]
+[ext_resource type="AudioStream" uid="uid://bv0tf5230p8xp" path="res://assets/audio/fail_sfx.wav" id="11_eyn67"]
 
 [node name="BaseRhythm" type="Node2D"]
 script = ExtResource("1_rg0q4")
@@ -54,6 +54,7 @@ metadata/_edit_use_anchors_ = true
 [node name="LevelEditor" parent="." instance=ExtResource("4_brmj2")]
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
+texture_filter = 1
 offset_left = 112.0
 offset_top = -336.0
 offset_right = 616.0
