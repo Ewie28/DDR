@@ -24,8 +24,9 @@ var cutscenes = {
 	},
 	"day2_to_day3": {
 		"scenes": [
-			{"image": "res://assets/cutscenes/day2_end/image1.png", "text": "today i managed to cover these bills"},
-			{"image": "res://assets/cutscenes/day2_end/image2.png", "text": "i wonder what tomorrow brings"}
+			{"image": "res://assets/rhythm/cutscenes/day2-3_cutscene_1.png", "text": "muscles = ladies"},
+			{"image": "res://assets/rhythm/cutscenes/day2-3_cutscene_2.png", "text": "rob-ot has no arms"},
+			{"image": "res://assets/rhythm/cutscenes/day2-3_cutscene_3.png", "text": "a gym membership would help..."}
 		],
 		"played": false
 	},
