@@ -6,16 +6,19 @@ extends Node
 var cutscenes = {
 	"day1_intro": {
 		"scenes": [
-			{"image": "res://assets/cutscenes/day1/image1.png", "text": "Day 1 ..."},
-			{"image": "res://assets/cutscenes/day1/image2.png", "text": "gotta make money"},
-			{"image": "res://assets/cutscenes/day1/blue.jpg", "text": "can't wait"}
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_1.png", "text": "In a world without humans... Robots take over"},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_2.png", "text": "Rob-ot has graduated!"},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_3.png", "text": "...but he can't land a job (like the humans)"},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_4.png", "text": "he must do odd jobs to pay the bills"},
+			{"image": "res://assets/rhythm/cutscenes/intro_cutscene_5.png", "text": "damn those ai he says [ ironic ]"}
 		],
 		"played": false
 	},
 	"day1_to_day2": {
 		"scenes": [
-			{"image": "res://assets/cutscenes/day1_end/image1.png", "text": "today i managed to cover these bills"},
-			{"image": "res://assets/cutscenes/day1_end/image2.png", "text": "i wonder what tomorrow brings"}
+			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_1.png", "text": "I paid all my bills for the day"},
+			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_2.png", "text": "...and also a pack of pokemon cards!"},
+			{"image": "res://assets/rhythm/cutscenes/day1-2_cutscene_3.png", "text": "i got 5 magikarps..."}
 		],
 		"played": false
 	},
@@ -35,8 +38,7 @@ var cutscenes = {
 	},
 	"bad_ending": {
 		"scenes": [
-			{"image": "res://assets/cutscenes/bad_end/image1.png", "text": "Oh no! You've failed too many times..."},
-			{"image": "res://assets/cutscenes/bad_end/image2.png", "text": "game over"}
+			{"image": "res://assets/rhythm/cutscenes/bad_ending_cutscene.png", "text": "Oh no! You've failed too many times..."}
 		],
 		"played": false
 	}
