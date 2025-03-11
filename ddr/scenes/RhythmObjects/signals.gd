@@ -105,7 +105,7 @@ func show_hint(text_message: String) -> void:
 
 func show_fail_hint() -> void:
 	# Show the hint after the 6-second delay
-	if missions_failed == 5:
+	if missions_failed == MAX_FAILURES:
 		show_hint("I only have the plant left... let's go home")
 		return
 	if Signals.missions_attempted == 0:

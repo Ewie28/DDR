@@ -92,14 +92,14 @@ texture_filter = 1
 layout_mode = 0
 offset_right = 1151.0
 offset_bottom = 645.0
-stretch_mode = 3
+expand_mode = 2
 
 [node name="CutsceneText" type="Label" parent="CutscenePanel"]
 layout_mode = 0
-offset_left = 182.0
-offset_top = 444.0
-offset_right = 752.0
-offset_bottom = 603.0
+offset_left = 84.0
+offset_top = 424.0
+offset_right = 654.0
+offset_bottom = 583.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.409476, 0.223177, 0.0905793, 1)
 theme_override_constants/outline_size = 11
