@@ -21,7 +21,7 @@ var levels = {
 	"rhythm2": {
 		"title": "Lawn mower",
 		"music": "res://assets/audio/song_2.wav", 
-		"background_images": ["res://assets/rhythm/rightImages/3_1.png", "res://assets/rhythm/rightImages/3_2.png", "res://assets/rhythm/rightImages/3_3.png"
+		"background_images": ["res://assets/rhythm/rightImages/3_1.png", "res://assets/rhythm/rightImages/3_2.png", "res://assets/rhythm/rightImages/3_3.png", "res://assets/rhythm/rightImages/3_4.png"
 		], 
 		"note_data": "[
   [1.07600037211609, 5.74800054187012, 7.15600053424072, 11.2733339464111, 12.596000114624, 15.2626661455078, 17.3639997636719, 17.7266668474121, 18.1319994127197, 20.1160005723877, 24.9266676103516, 27.2520002519531, 30.5266660844727, 33.3000005876465, 37.3213323747559],

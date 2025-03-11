@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://d2pj1g05ekrn4"]
 
-[ext_resource type="Texture2D" uid="uid://by3snty25nngf" path="res://assets/bg/bedroom_full.png" id="1_13mbk"]
+[ext_resource type="Texture2D" uid="uid://bcylnqsa34glk" path="res://assets/bg/bedroom_full.png" id="1_13mbk"]
 [ext_resource type="Script" uid="uid://ctjosvs6hwvdg" path="res://scenes/bedroom.gd" id="1_nttrf"]
 [ext_resource type="PackedScene" uid="uid://dhnjts72cui7w" path="res://scenes/player.tscn" id="2_qxlp7"]
 [ext_resource type="StyleBox" uid="uid://bfaeqbb3eoa28" path="res://scenes/stylebox_flat.tres" id="4_mifx2"]
-[ext_resource type="FontFile" uid="uid://ixnekxu1e453" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="4_qjqwp"]
+[ext_resource type="FontFile" uid="uid://cu47almslblgq" path="res://assets/rhythm/PixelGame-R9AZe.otf" id="4_qjqwp"]
 [ext_resource type="StyleBox" uid="uid://hsmijw43lwbs" path="res://scenes/stylebox_normal.tres" id="5_4b17u"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qxlp7"]
