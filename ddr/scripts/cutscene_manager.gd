@@ -32,8 +32,9 @@ var cutscenes = {
 	},
 	"good_ending": {
 		"scenes": [
-			{"image": "res://assets/cutscenes/good_end/image1.png", "text": "I'm pretty good at odd jobs"},
-			{"image": "res://assets/cutscenes/good_end/image2.png", "text": "game over"}
+			{"image": "res://assets/cutscenes/good_end/image1.png", "text": "Got all my bills paid... and got my Crunchyroll subscription!"},
+			{"image": "res://assets/cutscenes/good_end/image2.png", "text": "I'm pretty good at odd jobs..."},
+			{"image": "res://assets/cutscenes/good_end/image3.png", "text": "Successful unemployment!"},
 		],
 		"played": false
 	},
